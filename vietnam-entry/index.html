@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>베트남 진출 진단 | 강동조</title>
+<meta name="description" content="회사 정보만 입력하면 베트남 시장조사·마케팅·수출입·법인 설립 진단과 실행계획을 생성합니다. 입력 정보는 브라우저 밖으로 전송되지 않습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6ee; --paper: #fffdf8; --ink: #2b241c; --soft: #6f6456; --line: #e6dccb;
+    --accent: #9c7a52; --accent-deep: #7d5f3d; --accent-tint: #f3ebdd;
+    --ok: #4f6b45; --warn: #a0623f; --bad: #9b3b32; --dark: #2b241c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.7 "Noto Sans KR", -apple-system, sans-serif; }
+  a { color: var(--accent-deep); }
+  h1, h2, h3 { font-family: "Noto Serif KR", serif; font-weight: 600; line-height: 1.35; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { position: sticky; top: 0; z-index: 20; background: rgba(250,246,238,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 62px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--ink); }
+  .brand b { font-family: "Noto Serif KR", serif; font-size: 20px; letter-spacing: .05em; }
+  .brand span { font-size: 10px; letter-spacing: .22em; color: var(--soft); text-transform: uppercase; }
+  nav.steps { display: flex; gap: 18px; font-size: 13px; flex-wrap: wrap; }
+  nav.steps a { text-decoration: none; color: var(--soft); }
+  nav.steps a:hover { color: var(--ink); }
+
+  .hero { padding: 64px 0 40px; text-align: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .28em; color: var(--accent); font-weight: 600; }
+  .eyebrow::before, .eyebrow::after { content: ""; width: 28px; height: 1px; background: var(--accent); }
+  .hero h1 { font-size: clamp(28px, 4.4vw, 42px); margin: 18px 0 14px; }
+  .hero p { color: var(--soft); max-width: 680px; margin: 0 auto; }
+  .chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+  .chip { font-size: 12px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--soft); }
+
+  section.card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 32px; margin: 0 0 28px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+  .sec-head .num { font-family: "Noto Serif KR", serif; color: var(--accent); font-size: 26px; }
+  .sec-head h2 { margin: 0; font-size: 23px; }
+  .sec-head p { margin: 0; color: var(--soft); font-size: 14px; flex-basis: 100%; }
+  .locked { opacity: .45; pointer-events: none; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 22px; }
+  .grid .full { grid-column: 1 / -1; }
+  fieldset { border: 0; padding: 0; margin: 0 0 22px; }
+  legend { font-weight: 700; font-size: 14px; color: var(--accent-deep); margin-bottom: 10px; padding: 0; }
+  label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 5px; }
+  label small { color: var(--soft); font-weight: 400; }
+  input[type=text], input[type=number], select, textarea {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: #fff;
+    font: inherit; font-size: 14px; color: var(--ink);
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+  textarea { min-height: 72px; resize: vertical; }
+  .checks { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .checks label { display: flex; align-items: center; gap: 7px; font-weight: 400; font-size: 14px; margin: 0; cursor: pointer; }
+  .tri { display: flex; gap: 6px; }
+  .tri label { flex: 1; text-align: center; border: 1px solid var(--line); border-radius: 4px; padding: 8px 4px; margin: 0; cursor: pointer; font-weight: 400; background: #fff; }
+  .tri input { position: absolute; opacity: 0; pointer-events: none; }
+  .tri input:checked + span { color: var(--accent-deep); font-weight: 700; }
+  .tri label:has(input:checked) { border-color: var(--accent); background: var(--accent-tint); }
+  .tri label:has(input:focus-visible) { outline: 2px solid var(--accent); }
+
+  .products .row { display: grid; grid-template-columns: 1.1fr 1.6fr .7fr auto; gap: 8px; margin-bottom: 8px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--accent); background: var(--accent); color: #fff;
+         padding: 11px 22px; border-radius: 3px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .2s; }
+  .btn:hover { background: var(--accent-deep); }
+  .btn.ghost { background: transparent; color: var(--accent-deep); }
+  .btn.ghost:hover { background: var(--accent-tint); }
+  .btn.sm { padding: 6px 12px; font-size: 13px; white-space: nowrap; }
+  .bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .bar.end { justify-content: flex-end; }
+  .note { font-size: 13px; color: var(--soft); }
+  .alert { border-left: 3px solid var(--warn); background: #fbf1e8; padding: 12px 16px; font-size: 14px; margin: 0 0 18px; }
+  .alert.ok { border-color: var(--ok); background: #eef3ea; }
+
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 22px; }
+  .kpi { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; background: #fff; }
+  .kpi .k { font-size: 12px; color: var(--soft); }
+  .kpi .v { font-family: "Noto Serif KR", serif; font-size: 17px; margin-top: 4px; }
+
+  .entity { display: grid; grid-template-columns: 220px 1fr 52px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .entity:last-child { border-bottom: 0; }
+  .entity .meter { height: 10px; background: var(--accent-tint); border-radius: 5px; overflow: hidden; }
+  .entity .meter i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+  .entity.blocked .meter i { background: #c9bba5; }
+  .entity .sc { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .entity .why { grid-column: 2 / -1; font-size: 12.5px; color: var(--soft); }
+  .entity .why .blk { color: var(--bad); }
+  .entity.top .nm { font-weight: 700; color: var(--accent-deep); }
+
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tabs button { border: 1px solid var(--line); background: #fff; padding: 7px 14px; border-radius: 999px; font: inherit; font-size: 13px; cursor: pointer; color: var(--soft); }
+  .tabs button[aria-selected=true] { border-color: var(--accent); background: var(--accent-tint); color: var(--accent-deep); font-weight: 700; }
+  pre.prompt { white-space: pre-wrap; background: #fbf8f2; border: 1px solid var(--line); border-radius: 4px; padding: 16px; font: 13px/1.6 ui-monospace, Menlo, monospace; max-height: 420px; overflow: auto; margin: 0 0 12px; }
+
+  .resp { border: 1px solid var(--line); border-radius: 4px; padding: 14px; margin-bottom: 12px; background: #fff; }
+  .resp .rhead { display: flex; gap: 8px; margin-bottom: 8px; }
+  .resp textarea { min-height: 120px; font: 12.5px/1.5 ui-monospace, Menlo, monospace; }
+  .badge { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 3px; white-space: nowrap; }
+  .b-교차확인 { background: #e3ecdf; color: var(--ok); } .b-단일출처 { background: #f1ead9; color: var(--accent-deep); }
+  .b-상충 { background: #f6e1dc; color: var(--bad); } .b-추정 { background: #efe9df; color: var(--soft); } .b-미확인 { background: #eee; color: #777; }
+
+  .md { overflow-wrap: anywhere; }
+  .md h1 { font-size: 26px; margin: 0 0 6px; } .md h2 { font-size: 19px; margin: 32px 0 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .md h3 { font-size: 16px; margin: 20px 0 8px; }
+  .md blockquote { margin: 10px 0; padding: 8px 14px; border-left: 3px solid var(--accent); background: #fbf8f2; color: var(--soft); font-size: 13.5px; }
+  .tablewrap { overflow-x: auto; margin: 10px 0 16px; }
+  .md table { border-collapse: collapse; width: 100%; font-size: 13px; min-width: 560px; }
+  .md th, .md td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+  .md th { background: var(--accent-tint); font-weight: 700; }
+  .md ul, .md ol { padding-left: 22px; }
+  .md code { background: #f3ede2; padding: 1px 5px; border-radius: 3px; font-size: 12.5px; }
+
+  .cta { background: var(--dark); color: #efe6d6; border-radius: 6px; padding: 44px 32px; text-align: center; margin-bottom: 40px; }
+  .cta h2 { margin: 0 0 10px; font-size: 26px; }
+  .cta p { color: #bdae97; margin: 0 0 24px; }
+  .cta .btn.ghost { color: #efe6d6; border-color: rgba(255,255,255,.3); }
+  .cta .btn.ghost:hover { background: rgba(255,255,255,.06); }
+  footer { text-align: center; font-size: 12px; color: var(--soft); padding: 0 20px 40px; }
+
+  @media (max-width: 760px) {
+    section.card { padding: 22px 16px; }
+    .grid, .kpis { grid-template-columns: 1fr; }
+    .products .row { grid-template-columns: 1fr 1fr; }
+    .products .row textarea, .products .row input:nth-child(2) { grid-column: 1 / -1; }
+    .entity { grid-template-columns: 1fr 44px; }
+    .entity .meter { grid-column: 1 / -1; grid-row: 2; }
+    .entity .why { grid-column: 1 / -1; }
+    nav.steps { display: none; }
+  }
+  @media print {
+    header.top, .hero, #s1, #s2, #s3, #s4, .cta, footer, .noprint { display: none !important; }
+    body { background: #fff; }
+    section.card { border: 0; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><b>강동조</b><span>Vietnam Entry Advisory</span></a>
+    <nav class="steps" aria-label="단계">
+      <a href="#s1">1 정보 입력</a><a href="#s2">2 진단</a><a href="#s3">3 조사 프롬프트</a><a href="#s4">4 교차검증</a><a href="#s5">5 보고서</a><a href="../">이력서 ↩</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">VIETNAM ENTRY DIAGNOSTIC</div>
+    <h1>회사 정보만 입력하면<br>베트남 진출 진단부터 실행계획까지</h1>
+    <p>시장조사 · 마케팅 조사 · 수출입 · 법인/지사/사무소 설립. 베트남 현지 FDI 컨설팅 실무 기준으로 핵심 쟁점, 진출형태 비교, 리스크, 실행 로드맵과 AI 조사 프롬프트를 자동으로 만들어 드립니다.</p>
+    <div class="chips">
+      <span class="chip">입력 정보는 서버로 전송되지 않음 (브라우저 내 처리)</span>
+      <span class="chip">확인된 사실 / 추정 / 미확인 구분</span>
+      <span class="chip">여러 AI 답변 교차검증</span>
+    </div>
+  </div>
+
+  <!-- 1. 입력 -->
+  <section class="card" id="s1" aria-labelledby="h1t">
+    <div class="sec-head"><span class="num">01</span><h2 id="h1t">회사 정보 입력</h2>
+      <p>모르는 항목은 비워 두셔도 됩니다. 비어 있는 항목은 보고서에 '추가 확인이 필요한 사항'으로 표시됩니다.</p></div>
+    <div class="bar" style="margin-bottom:20px">
+      <span class="note">예시 불러오기:</span>
+      <button class="btn ghost sm" type="button" data-sample="defense">방산 광학 부품 기업</button>
+      <button class="btn ghost sm" type="button" data-sample="cosmetics">K-뷰티 브랜드</button>
+      <button class="btn ghost sm" type="button" id="resetBtn">초기화</button>
+    </div>
+    <form id="intake" autocomplete="off">
+      <fieldset>
+        <legend>의뢰 범위</legend>
+        <div class="checks" id="deliverables">
+          <label><input type="checkbox" name="deliverables" value="market_research" checked> 시장조사</label>
+          <label><input type="checkbox" name="deliverables" value="marketing_research" checked> 마케팅 조사</label>
+          <label><input type="checkbox" name="deliverables" value="entity_setup" checked> 법인·지사·사무소 설립</label>
+          <label><input type="checkbox" name="deliverables" value="trade" checked> 수출입(통관·관세·인증)</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>기업 개요</legend>
+        <div class="grid">
+          <div><label for="f_name">회사명 *</label><input type="text" id="f_name" data-k="company.name"></div>
+          <div><label for="f_industry">업종 * <small>예: 화장품 제조, 방산 부품</small></label><input type="text" id="f_industry" data-k="company.industry"></div>
+          <div><label for="f_bm">사업모델</label><select id="f_bm" data-k="company.business_model"><option value="">선택</option><option>B2B</option><option>B2C</option><option>B2G</option><option>B2B, B2G</option><option>B2B, B2C</option></select></div>
+          <div><label for="f_year">설립연도 <small>사무소·지점 자격 판단</small></label><input type="number" id="f_year" data-k="company.established_year" data-num min="1900" max="2100"></div>
+          <div><label for="f_emp">임직원 수</label><input type="number" id="f_emp" data-k="company.employees" data-num min="0"></div>
+          <div><label for="f_exp">수출 경험</label><input type="text" id="f_exp" data-k="company.export_experience" placeholder="예: 일본·태국 온라인 판매"></div>
+          <div class="full"><label for="f_cert">보유 인증 <small>쉼표로 구분</small></label><input type="text" id="f_cert" data-k="company.certifications" data-list placeholder="ISO 9001, CE, Halal"></div>
+        </div>
+      </fieldset>
+      <fieldset class="products">
+        <legend>주력 제품·서비스 *</legend>
+        <div id="products"></div>
+        <button class="btn ghost sm" type="button" id="addProduct">+ 제품 추가</button>
+      </fieldset>
+      <fieldset>
+        <legend>베트남 진출 계획</legend>
+        <div class="grid">
+          <div class="full"><label for="f_obj">진출 목적 *</label><input type="text" id="f_obj" data-k="vietnam.objective" placeholder="예: 2년 내 현지 판매법인 설립 후 연매출 50억 원"></div>
+          <div><label for="f_cust">목표 고객 *</label><input type="text" id="f_cust" data-k="vietnam.target_customers" placeholder="예: 대형 유통사, 20~35세 도시 여성"></div>
+          <div><label for="f_city">목표 지역 <small>쉼표로 구분</small></label><input type="text" id="f_city" data-k="vietnam.target_cities" data-list value="호찌민, 하노이"></div>
+          <div><label for="f_pres">현재 베트남 거점</label><select id="f_pres" data-k="vietnam.current_presence">
+            <option value="none">없음</option><option value="distributor">현지 유통사·대리점</option><option value="rep_office">대표사무소</option><option value="branch">지점</option><option value="entity">현지 법인</option></select></div>
+          <div><label for="f_partner">기존 현지 파트너</label><input type="text" id="f_partner" data-k="vietnam.existing_partners"></div>
+          <div><label for="f_stage">진출 단계</label><select id="f_stage" data-k="vietnam.entry_stage">
+            <option value="exploring">타당성 검토 중</option><option value="committed">진출 결정</option><option value="expanding">확장 단계</option></select></div>
+          <div><label for="f_budget">초기 예산 <small>천 달러</small></label><input type="number" id="f_budget" data-k="vietnam.budget_usd_k" data-num min="0"></div>
+          <div><label for="f_time">목표 시점 <small>개월 후</small></label><input type="number" id="f_time" data-k="vietnam.timeline_months" data-num min="0"></div>
+          <div><label for="f_hire">1년 내 현지 채용 <small>명</small></label><input type="number" id="f_hire" data-k="vietnam.local_hiring_plan" data-num min="0"></div>
+          <div><label>베트남 안에서 직접 판매·세금계산서 발행</label>
+            <div class="tri" data-k="vietnam.needs_local_invoicing">
+              <label><input type="radio" name="inv" value="true"><span>필요</span></label><label><input type="radio" name="inv" value="false"><span>불필요</span></label><label><input type="radio" name="inv" value="" checked><span>미정</span></label></div></div>
+          <div><label>현지 생산·조립 계획</label>
+            <div class="tri" data-k="vietnam.local_manufacturing">
+              <label><input type="radio" name="mfg" value="true"><span>있음</span></label><label><input type="radio" name="mfg" value="false"><span>없음</span></label><label><input type="radio" name="mfg" value="" checked><span>미정</span></label></div></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>해당 사항 <small style="font-weight:400;color:var(--soft)">— 규제·평판 리스크 분석이 강화됩니다</small></legend>
+        <div class="checks">
+          <label><input type="checkbox" data-k="sensitivity.defense_or_military"> 방산·군 조달</label>
+          <label><input type="checkbox" data-k="sensitivity.dual_use_or_strategic"> 전략물자·이중용도 가능성</label>
+          <label><input type="checkbox" data-k="sensitivity.government_customer"> 정부·공기업 대상 영업</label>
+          <label><input type="checkbox" data-k="sensitivity.personal_data"> 베트남 개인정보 처리</label>
+          <label><input type="checkbox" data-k="sensitivity.regulated_health"> 식품·화장품·의약·의료기기</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="grid"><div class="full"><label for="f_cons">제약 조건·메모</label><textarea id="f_cons" data-k="constraints" placeholder="예: 지분 51% 이상 유지, 핵심 기술 이전 불가"></textarea></div></div>
+      </fieldset>
+      <div class="bar end"><span class="note" id="saveNote"></span><button class="btn" type="submit">진단 실행 →</button></div>
+    </form>
+  </section>
+
+  <!-- 2. 진단 -->
+  <section class="card locked" id="s2" aria-labelledby="h2t">
+    <div class="sec-head"><span class="num">02</span><h2 id="h2t">진단 결과</h2><p>입력 정보 기반 규칙 진단입니다. 모든 판단에 근거를 표시합니다.</p></div>
+    <div id="diagOut"><p class="note">1단계에서 진단을 실행하면 결과가 표시됩니다.</p></div>
+  </section>
+
+  <!-- 3. 프롬프트 -->
+  <section class="card locked" id="s3" aria-labelledby="h3t">
+    <div class="sec-head"><span class="num">03</span><h2 id="h3t">AI 조사 프롬프트</h2>
+      <p>각 프롬프트를 ChatGPT·Gemini·Perplexity·Claude 등 2개 이상 AI에 그대로 붙여넣으세요. 답변이 표 형식으로 나오도록 설계되어 4단계에서 자동 비교됩니다.</p></div>
+    <div class="tabs" role="tablist" id="promptTabs"></div>
+    <pre class="prompt" id="promptBox"></pre>
+    <div class="bar"><button class="btn sm" type="button" id="copyPrompt">이 프롬프트 복사</button><button class="btn ghost sm" type="button" id="dlPrompts">전체 프롬프트 다운로드(.md)</button><span class="note" id="copyNote" role="status"></span></div>
+  </section>
+
+  <!-- 4. 교차검증 -->
+  <section class="card locked" id="s4" aria-labelledby="h4t">
+    <div class="sec-head"><span class="num">04</span><h2 id="h4t">AI 답변 교차검증</h2>
+      <p>AI 이름을 적고 답변 전체를 붙여넣으세요. 질문 코드(MKT-01 등)를 읽어 모듈을 자동 분류합니다. 여러 모듈 답변을 한 칸에 함께 붙여넣어도 됩니다.</p></div>
+    <div id="respList"></div>
+    <div class="bar" style="margin-bottom:18px"><button class="btn ghost sm" type="button" id="addResp">+ AI 답변 추가</button><button class="btn sm" type="button" id="runMerge">교차검증 실행</button></div>
+    <div id="mergeOut"></div>
+  </section>
+
+  <!-- 5. 보고서 -->
+  <section class="card locked" id="s5" aria-labelledby="h5t">
+    <div class="sec-head"><span class="num">05</span><h2 id="h5t">보고서 초안</h2><p>고객사 제출본은 권고 어투로, 내부 검토본은 담당자 배분형으로 작성됩니다.</p></div>
+    <div class="bar noprint" style="margin-bottom:16px">
+      <div class="tabs" role="tablist" id="audTabs" style="margin:0">
+        <button type="button" role="tab" data-aud="external" aria-selected="true">고객사 제출본</button>
+        <button type="button" role="tab" data-aud="internal" aria-selected="false">내부 검토본</button>
+      </div>
+      <button class="btn ghost sm" type="button" id="dlReport">Markdown 다운로드</button>
+      <button class="btn ghost sm" type="button" id="printReport">PDF로 저장(인쇄)</button>
+    </div>
+    <div class="md" id="reportOut"></div>
+  </section>
+
+  <div class="cta">
+    <div class="eyebrow" style="color:#cbb796">CONSULTING</div>
+    <h2 style="margin-top:16px">진단 결과를 실행으로 옮기려면</h2>
+    <p>현지 실사, 파트너 발굴, 인허가 대행, 고객사 제출용 보고서·발표자료 작성까지 직접 지원합니다.</p>
+    <div class="bar" style="justify-content:center">
+      <a class="btn" id="mailCta" href="mailto:djkang1004@gmail.com?subject=%5B%EB%B2%A0%ED%8A%B8%EB%82%A8%20%EC%A7%84%EC%B6%9C%20%EC%83%81%EB%8B%B4%5D">진단 결과로 상담 신청</a>
+      <a class="btn ghost" href="../">강동조 이력·포트폴리오 보기</a>
+    </div>
+  </div>
+</main>
+<footer>
+  본 도구의 결과는 공개 법령·실무 경험에 기반한 참고용 초안이며 법률·세무 자문이 아닙니다. 법령 기준일: <span id="kbDate"></span><br>
+  © 강동조 · djkang1004@gmail.com
+</footer>
+
+<script src="engine.js"></script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s, el) => (el || document).querySelector(s);
+  const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
+  const STORE = "vnentry.v1";
+  let KB = null, DIAG = null, MERGED = null, AUD = "external", CUR_MOD = null;
+
+  const SAMPLES = {
+    defense: {
+      project: { deliverables: ["market_research", "entity_setup", "trade"] },
+      company: { name: "가상광학(주)", established_year: 2009, employees: 120, industry: "방산 광학 부품 및 산업용 열화상 카메라 제조", business_model: "B2B, B2G",
+        products: [{ name: "야간투시 광학 모듈", description: "군·경 감시장비용 열화상·야간투시 광학 모듈", hs_code: "9013.80" }, { name: "산업용 열화상 카메라", description: "발전소·공장 설비 점검용", hs_code: "9025.19" }],
+        export_experience: "인도네시아·필리핀 방산 수출 경험", certifications: ["ISO 9001", "AS9100"] },
+      vietnam: { current_presence: "none", target_cities: ["하노이", "호찌민"], target_customers: "베트남 국방부 산하 국방산업 기업, 민간 발전소·제조공장",
+        objective: "국방 분야 기술협력 및 민수 열화상 카메라 판매 거점 확보", entry_stage: "exploring", needs_local_invoicing: false, local_manufacturing: false, local_hiring_plan: 2, budget_usd_k: 150, timeline_months: 9 },
+      sensitivity: { defense_or_military: true, dual_use_or_strategic: true, government_customer: true },
+      constraints: "기술유출 우려로 합작 시 핵심 광학 설계는 이전 불가",
+    },
+    cosmetics: {
+      project: { deliverables: ["market_research", "marketing_research", "entity_setup", "trade"] },
+      company: { name: "가상뷰티", established_year: 2018, employees: 35, industry: "기초 스킨케어 화장품 브랜드", business_model: "B2C",
+        products: [{ name: "진정 앰플·선크림", description: "민감성 피부용 기초 화장품", hs_code: "3304.99" }], export_experience: "일본·태국 온라인 판매", certifications: ["CGMP", "비건 인증"] },
+      vietnam: { current_presence: "distributor", existing_partners: "호찌민 소재 수입 유통사 1곳 (비독점)", target_cities: ["호찌민", "하노이"], target_customers: "20~35세 도시 여성",
+        objective: "2년 내 현지 판매법인 설립 후 이커머스·H&B 채널 직접 운영", entry_stage: "committed", needs_local_invoicing: true, local_manufacturing: false, local_hiring_plan: 6, budget_usd_k: 400, timeline_months: 12 },
+      sensitivity: { personal_data: true },
+    },
+  };
+
+  // ------------------------------------------------ 저장(브라우저 내)
+  const load = () => { try { return JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { return null; } };
+  const save = (obj) => { try { localStorage.setItem(STORE, JSON.stringify(obj)); $("#saveNote").textContent = "입력 내용이 이 브라우저에만 임시 저장됩니다."; } catch (e) {} };
+
+  // ------------------------------------------------ 마크다운 렌더러 (보고서 전용 최소 구현)
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/(https?:\/\/[^\s<)]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+  function md(src) {
+    const lines = src.split("\n"), out = [];
+    let i = 0;
+    while (i < lines.length) {
+      const l = lines[i];
+      if (l.trim().startsWith("|")) {
+        const rows = [];
+        while (i < lines.length && lines[i].trim().startsWith("|")) { rows.push(lines[i].trim()); i++; }
+        const data = rows.filter((r) => !/^\|[\s\-|:]+\|$/.test(r)).map((r) => r.replace(/^\||\|$/g, "").split("|").map((c) => c.trim()));
+        if (data.length) {
+          out.push('<div class="tablewrap"><table><thead><tr>' + data[0].map((c) => `<th>${inline(c)}</th>`).join("") + "</tr></thead><tbody>" +
+            data.slice(1).map((r) => "<tr>" + r.map((c) => `<td>${inline(c)}</td>`).join("") + "</tr>").join("") + "</tbody></table></div>");
+        }
+        continue;
+      }
+      let m;
+      if ((m = l.match(/^(#{1,4})\s+(.*)$/))) out.push(`<h${m[1].length}>${inline(m[2])}</h${m[1].length}>`);
+      else if (l.startsWith("> ")) out.push(`<blockquote>${inline(l.slice(2))}</blockquote>`);
+      else if (/^\s*[-*] /.test(l)) { const items = []; while (i < lines.length && /^\s*[-*] /.test(lines[i])) { items.push(`<li>${inline(lines[i].replace(/^\s*[-*] /, ""))}</li>`); i++; } out.push(`<ul>${items.join("")}</ul>`); continue; }
+      else if (/^\d+\. /.test(l)) { const items = []; while (i < lines.length && /^\d+\. /.test(lines[i])) { items.push(`<li>${inline(lines[i].replace(/^\d+\. /, ""))}</li>`); i++; } out.push(`<ol>${items.join("")}</ol>`); continue; }
+      else if (l.trim()) out.push(`<p>${inline(l)}</p>`);
+      i++;
+    }
+    return out.join("\n");
+  }
+
+  // ------------------------------------------------ 폼 ↔ 데이터
+  function productRow(p) {
+    p = p || {};
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `<input type="text" placeholder="제품명" aria-label="제품명" data-p="name"><input type="text" placeholder="설명 (용도·고객)" aria-label="제품 설명" data-p="description"><input type="text" placeholder="HS코드" aria-label="HS코드" data-p="hs_code"><button class="btn ghost sm" type="button" aria-label="제품 삭제">삭제</button>`;
+    for (const k of ["name", "description", "hs_code"]) $(`[data-p=${k}]`, row).value = p[k] || "";
+    $("button", row).onclick = () => { row.remove(); if (!$$("#products .row").length) $("#products").appendChild(productRow()); };
+    return row;
+  }
+  function setPath(o, path, val) { const ks = path.split("."); let c = o; ks.slice(0, -1).forEach((k) => (c = c[k] = c[k] || {})); c[ks[ks.length - 1]] = val; }
+  function getPath(o, path) { return path.split(".").reduce((c, k) => (c == null ? undefined : c[k]), o); }
+
+  function readForm() {
+    const d = { project: { deliverables: $$("#deliverables input:checked").map((x) => x.value) }, company: {}, vietnam: {}, sensitivity: {} };
+    for (const el of $$("#intake [data-k]")) {
+      const k = el.dataset.k;
+      if (el.classList.contains("tri")) { const v = ($("input:checked", el) || {}).value; setPath(d, k, v === "true" ? true : v === "false" ? false : null); continue; }
+      if (el.type === "checkbox") { setPath(d, k, el.checked); continue; }
+      let v = el.value.trim();
+      if (el.hasAttribute("data-num")) v = v === "" ? null : Number(v);
+      else if (el.hasAttribute("data-list")) v = v.split(",").map((s) => s.trim()).filter(Boolean);
+      setPath(d, k, v);
+    }
+    d.company.products = $$("#products .row").map((r) => ({ name: $("[data-p=name]", r).value.trim(), description: $("[data-p=description]", r).value.trim(), hs_code: $("[data-p=hs_code]", r).value.trim() })).filter((p) => p.name);
+    return d;
+  }
+  function writeForm(d) {
+    d = d || {};
+    $("#intake").reset();
+    const dels = (d.project && d.project.deliverables) || Object.keys(VNEngine.DELIVERABLES);
+    $$("#deliverables input").forEach((x) => (x.checked = dels.includes(x.value)));
+    for (const el of $$("#intake [data-k]")) {
+      const v = getPath(d, el.dataset.k);
+      if (el.classList.contains("tri")) { const s = v === true ? "true" : v === false ? "false" : ""; $$("input", el).forEach((r) => (r.checked = r.value === s)); continue; }
+      if (el.type === "checkbox") { el.checked = !!v; continue; }
+      if (v === undefined || v === null) { if (el.id !== "f_city") el.value = ""; continue; }
+      el.value = Array.isArray(v) ? v.join(", ") : v;
+    }
+    const box = $("#products"); box.innerHTML = "";
+    const ps = (d.company && d.company.products) || [];
+    (ps.length ? ps : [{}]).forEach((p) => box.appendChild(productRow(p)));
+  }
+
+  // ------------------------------------------------ 렌더링
+  function unlock() { ["#s2", "#s3", "#s4", "#s5"].forEach((s) => $(s).classList.remove("locked")); }
+
+  function renderDiag() {
+    const g = DIAG, rec = g.recommendation, miss = g.missing.critical.concat(g.missing.decision);
+    const max = Math.max(...g.entities.map((e) => e.score), 1);
+    const risks = VNEngine.riskMatrix(g).slice().sort((a, b) => b.lvl - a.lvl);
+    const flags = { defense_or_military: "방산", dual_use_or_strategic: "전략물자", government_customer: "B2G", personal_data: "개인정보", regulated_health: "보건 규제" };
+    let h = "";
+    h += miss.length
+      ? `<div class="alert"><b>정확도를 높이려면 먼저 확인할 항목:</b> ${esc(miss[0])}${miss.length > 1 ? ` <span class="note">(외 ${miss.length - 1}건: ${esc(miss.slice(1).join(", "))})</span>` : ""}</div>`
+      : `<div class="alert ok">핵심 입력 항목이 모두 채워졌습니다.</div>`;
+    h += `<div class="kpis">
+      <div class="kpi"><div class="k">판별 업종</div><div class="v">${esc(g.context.sector)}</div></div>
+      <div class="kpi"><div class="k">추천 진출형태</div><div class="v">${esc(rec.primary.name.replace(/\s*\(.*\)$/, ""))}</div></div>
+      <div class="kpi"><div class="k">최우선 리스크</div><div class="v">${risks.slice(0, 3).map((r) => r.cat).join(" · ")}</div></div>
+      <div class="kpi"><div class="k">리스크 플래그</div><div class="v">${Object.keys(flags).filter((k) => g.flags[k]).map((k) => flags[k]).join(" · ") || "없음"}</div></div></div>`;
+    if (rec.phased) h += `<div class="alert ok"><b>단계적 경로 권고:</b> ${esc(rec.phased)}</div>`;
+    h += `<h3>진출형태 비교 <span class="note">(적합도 점수와 가감 근거)</span></h3>`;
+    h += g.entities.map((e, i) => `<div class="entity ${i === 0 && !e.blockers.length ? "top" : ""} ${e.blockers.length ? "blocked" : ""}">
+        <div class="nm">${esc(e.name)}</div><div class="meter" aria-hidden="true"><i style="width:${Math.max(4, (e.score / max) * 100)}%"></i></div><div class="sc">${e.score}</div>
+        <div class="why">${e.reasons.map(esc).join(" · ") || "가감 없음"}${e.blockers.length ? ` · <span class="blk">${e.blockers.map(esc).join(" · ")}</span>` : ""}</div></div>`).join("");
+    const issueMd = "\n### 핵심 쟁점\n\n| No | 구분 | 쟁점 | 판단 근거 |\n|---|---|---|---|\n" + g.issues.map((x, i) => `| ${i + 1} | ${x.kind} | ${x.title} | ${x.why} |`).join("\n");
+    const riskMd = "\n### 리스크 및 전문가 검토\n\n| 리스크 | 수준 | 내용 | 전문가 |\n|---|---|---|---|\n" + VNEngine.riskMatrix(g).map((r) => `| ${r.cat} | ${VNEngine.LEVEL[r.lvl]} | ${r.desc} | ${r.expert} |`).join("\n");
+    const roadMd = "\n### 실행 로드맵 (추정)\n\n| 단계 | 업무 | 수행 조직 | 주차 |\n|---|---|---|---|\n" + VNEngine.roadmapRows(KB, g, "external").map((r) => "| " + r.join(" | ") + " |").join("\n");
+    h += `<div class="md">${md(issueMd + "\n" + riskMd + "\n" + roadMd)}</div>`;
+    $("#diagOut").innerHTML = h;
+  }
+
+  function renderPrompts() {
+    const tabs = $("#promptTabs"); tabs.innerHTML = "";
+    if (!DIAG.modules.some((m) => m.id === CUR_MOD)) CUR_MOD = DIAG.modules[0] && DIAG.modules[0].id;
+    for (const m of DIAG.modules) {
+      const b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab"); b.textContent = `${m.id} ${m.title}`;
+      b.setAttribute("aria-selected", String(m.id === CUR_MOD));
+      b.onclick = () => { CUR_MOD = m.id; renderPrompts(); };
+      tabs.appendChild(b);
+    }
+    const m = DIAG.modules.find((x) => x.id === CUR_MOD);
+    $("#promptBox").textContent = m ? VNEngine.modulePrompt(m, DIAG) : "";
+  }
+
+  function respBlock(r) {
+    r = r || {};
+    const el = document.createElement("div"); el.className = "resp";
+    el.innerHTML = `<div class="rhead"><input type="text" placeholder="AI 이름 (예: ChatGPT)" aria-label="AI 이름" value="${esc(r.llm || "")}"><button class="btn ghost sm" type="button">삭제</button></div><textarea aria-label="AI 답변 붙여넣기" placeholder="AI 답변 전체를 붙여넣으세요 (표 형식 포함)"></textarea>`;
+    $("textarea", el).value = r.text || "";
+    $("button", el).onclick = () => el.remove();
+    return el;
+  }
+
+  function collectResponses() {
+    const resp = {}, prefixes = new Set(DIAG.modules.map((m) => m.id));
+    $$("#respList .resp").forEach((el, i) => {
+      const llm = $("input", el).value.trim() || `AI-${i + 1}`, text = $("textarea", el).value;
+      if (!text.trim()) return;
+      const byMod = {};
+      for (const line of text.split(/\r?\n/)) {
+        const mm = line.match(/^\s*\|\s*\**([A-Z]{3})-\d{2}/);
+        if (mm && prefixes.has(mm[1])) (byMod[mm[1]] = byMod[mm[1]] || []).push(line);
+      }
+      for (const [mod, lines] of Object.entries(byMod)) { resp[mod] = resp[mod] || {}; resp[mod][llm] = ((resp[mod][llm] || "") + "\n" + lines.join("\n")).trim(); }
+    });
+    return resp;
+  }
+
+  function renderMerge() {
+    const g = DIAG, M = MERGED;
+    if (!M.llms.length) { $("#mergeOut").innerHTML = `<div class="alert">인식된 답변 표가 없습니다. 답변에 '| MKT-01 | …' 형식의 표가 포함되어 있는지 확인해 주세요.</div>`; return; }
+    let h = `<div class="alert">비교 AI: <b>${M.llms.map(esc).join(", ")}</b> · ` + VNEngine.STATUS_ORDER.map((s) => `<span class="badge b-${s}">${s} ${M.summary[s]}</span>`).join(" ") +
+      `<br><span class="note">AI가 제시한 URL은 실제로 존재하지 않을 수 있습니다. '교차확인' 항목도 출처를 직접 열어 확인한 뒤 사용하세요.</span></div>`;
+    const rows = [];
+    for (const m of g.modules) for (const q of m.questions) {
+      const r = M.results[q.code];
+      if (!Object.keys(r.answers).length) continue;
+      rows.push(`<tr><td>${q.code}</td><td><span class="badge b-${r.status}">${r.status}</span></td><td>${M.llms.map((l) => r.answers[l] ? `<b>${esc(l)}</b> [${esc(r.answers[l].class)}] ${inline(r.answers[l].answer)}` : "").filter(Boolean).join("<br>")}</td><td>${esc(r.notes.join("; "))}</td></tr>`);
+    }
+    h += `<div class="md tablewrap"><table><thead><tr><th>코드</th><th>판정</th><th>AI별 답변</th><th>비고</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+    $("#mergeOut").innerHTML = h;
+  }
+
+  function reportText() { return VNEngine.report(KB, DIAG, MERGED, { audience: AUD, author: "강동조 · 베트남 진출 컨설팅" }); }
+  function renderReport() {
+    $$("#audTabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.aud === AUD)));
+    $("#reportOut").innerHTML = md(reportText());
+    const c = DIAG.context, body = `회사명: ${c.company}\n업종: ${c.sector}\n제품: ${c.products}\n진출 목적: ${c.objective}\n진단 추천안: ${DIAG.recommendation.primary.name}\n\n상담 희망 내용:\n`;
+    $("#mailCta").href = "mailto:djkang1004@gmail.com?subject=" + encodeURIComponent(`[베트남 진출 상담] ${c.company}`) + "&body=" + encodeURIComponent(body);
+  }
+
+  function download(name, text) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([text], { type: "text/markdown;charset=utf-8" }));
+    a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+  const fileSafe = (s) => (s || "client").replace(/[^\w가-힣-]+/g, "_");
+
+  function run(scroll) {
+    const raw = readForm();
+    save({ form: raw });
+    DIAG = VNEngine.diagnose(KB, raw);
+    MERGED = Object.keys(collectResponses()).length ? VNEngine.merge(DIAG, collectResponses()) : null;
+    unlock(); renderDiag(); renderPrompts(); renderReport();
+    if (MERGED) renderMerge();
+    if (scroll) $("#s2").scrollIntoView({ behavior: "smooth" });
+  }
+
+  // ------------------------------------------------ 이벤트
+  $("#intake").addEventListener("submit", (e) => { e.preventDefault(); run(true); });
+  $("#intake").addEventListener("input", () => save({ form: readForm() }));
+  $("#addProduct").onclick = () => $("#products").appendChild(productRow());
+  $("#resetBtn").onclick = () => { writeForm({}); try { localStorage.removeItem(STORE); } catch (e) {} };
+  $$("[data-sample]").forEach((b) => (b.onclick = () => { writeForm(SAMPLES[b.dataset.sample]); run(true); }));
+  $("#copyPrompt").onclick = async () => {
+    try { await navigator.clipboard.writeText($("#promptBox").textContent); $("#copyNote").textContent = "복사했습니다."; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents($("#promptBox")); getSelection().removeAllRanges(); getSelection().addRange(r); $("#copyNote").textContent = "선택했습니다. Ctrl+C로 복사하세요."; }
+  };
+  $("#dlPrompts").onclick = () => download(`${fileSafe(DIAG.context.company)}_조사프롬프트.md`, DIAG.modules.map((m) => VNEngine.modulePrompt(m, DIAG)).join("\n\n---\n\n"));
+  $("#addResp").onclick = () => $("#respList").appendChild(respBlock());
+  $("#runMerge").onclick = () => { MERGED = VNEngine.merge(DIAG, collectResponses()); renderMerge(); renderReport(); };
+  $$("#audTabs button").forEach((b) => (b.onclick = () => { AUD = b.dataset.aud; renderReport(); }));
+  $("#dlReport").onclick = () => download(`${fileSafe(DIAG.context.company)}_베트남진출보고서_${AUD === "external" ? "제출본" : "내부검토본"}.md`, reportText());
+  $("#printReport").onclick = () => window.print();
+
+  // ------------------------------------------------ 시작
+  ["ChatGPT", "Gemini"].forEach((n) => $("#respList").appendChild(respBlock({ llm: n })));
+  fetch("kb.json").then((r) => r.json()).then((kb) => {
+    KB = kb;
+    $("#kbDate").textContent = kb.entity_types.last_reviewed;
+    const saved = load();
+    writeForm(saved && saved.form);
+  }).catch(() => { $("#diagOut").innerHTML = '<div class="alert">판단 기준 데이터(kb.json)를 불러오지 못했습니다. 웹 서버에서 열어 주세요.</div>'; });
+})();
+</script>
+</body>
+</html>
