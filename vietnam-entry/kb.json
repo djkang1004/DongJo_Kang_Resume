@@ -1,0 +1,1333 @@
+{
+ "entity_types": {
+  "last_reviewed": "2026-10",
+  "options": [
+   {
+    "id": "distributor",
+    "name": "현지 유통사·대리점 활용 (법인 미설립)",
+    "legal_basis": "상법(Commercial Law 2005) 대리·유통 계약",
+    "can_do": "현지 파트너 명의 수입·판매, 초기 시장 검증",
+    "cannot_do": "고객사 명의 현지 영업·채용·인보이스 발행",
+    "licensing": "별도 인허가 없음 (파트너가 수입·유통 자격 보유 필요)",
+    "timeline_statutory": "해당 없음",
+    "timeline_practical": "파트너 발굴·계약 1~3개월 (추정)",
+    "capital": "없음",
+    "pros": [
+     "초기 비용·고정비 최소",
+     "파트너의 기존 유통망·인허가 활용",
+     "철수 용이"
+    ],
+    "cons": [
+     "가격·브랜드·고객 데이터 통제력 약함",
+     "파트너 의존도 높음, 마진 공유"
+    ],
+    "risks": [
+     "독점권 분쟁·계약 해지 시 재고·등록증(제품 등록 명의) 회수 문제",
+     "파트너 컴플라이언스(부패·세무) 리스크 전이"
+    ],
+    "difficulty": 1,
+    "status": "확인"
+   },
+   {
+    "id": "rep_office",
+    "name": "대표사무소 (Representative Office)",
+    "legal_basis": "Decree 07/2016/ND-CP (상법 시행령)",
+    "can_do": "시장조사, 연락·홍보, 본사 계약 이행 촉진",
+    "cannot_do": "직접 영리활동, 판매계약 체결, 인보이스 발행",
+    "licensing": "성(省)급 산업무역국(DOIT) 또는 경제구역관리위원회 — 설립 허가 유효기간 5년",
+    "eligibility": "외국 상인으로서 본국 등록 후 최소 1년 이상 영업 (Decree 07/2016)",
+    "timeline_statutory": "서류 접수 후 7영업일 (Decree 07/2016)",
+    "timeline_practical": "서류 준비(본국 공증·영사확인 포함) 포함 1.5~3개월 (추정)",
+    "capital": "법정 자본금 없음",
+    "pros": [
+     "설립 간편, 비용 낮음",
+     "현지 인력 채용 가능 (조직 기반 확보)"
+    ],
+    "cons": [
+     "매출 발생 불가 → 판매가 목적이면 부적합",
+     "활동 보고 의무"
+    ],
+    "risks": [
+     "실질 영리활동 시 무허가 영업으로 제재 가능"
+    ],
+    "difficulty": 2,
+    "status": "확인"
+   },
+   {
+    "id": "branch",
+    "name": "지점 (Branch)",
+    "legal_basis": "Decree 07/2016/ND-CP",
+    "can_do": "본사 업종 범위 내 영리활동 (베트남 WTO 양허 범위 내)",
+    "cannot_do": "본사 업종 외 활동, 일반적으로 제조",
+    "licensing": "산업무역부(MOIT) 설립 허가 — 유효기간 5년",
+    "eligibility": "본국 등록 후 최소 5년 이상 영업 (Decree 07/2016)",
+    "timeline_statutory": "접수 후 7영업일 + 관계 부처 협의 시 연장",
+    "timeline_practical": "3~6개월 이상 (추정, 승인 사례 제한적)",
+    "capital": "법정 자본금 없음 (본사 책임)",
+    "pros": [
+     "본사 명의 영업 가능"
+    ],
+    "cons": [
+     "승인 사례가 적고 절차가 불투명한 편 (실무 평가)",
+     "본사가 무한 책임"
+    ],
+    "risks": [
+     "허가 업종 제한으로 실제 활용도 낮음"
+    ],
+    "difficulty": 4,
+    "status": "검증필요"
+   },
+   {
+    "id": "fdi_llc",
+    "name": "100% 외국인투자 유한책임회사 (FDI LLC)",
+    "legal_basis": "투자법 2020(61/2020/QH14), 기업법 2020(59/2020/QH14) 및 2025년 개정, Decree 31/2021/ND-CP(외국인 시장접근 목록)",
+    "can_do": "투자등록 범위 내 판매·서비스·제조, 현지 인보이스 발행, 채용",
+    "cannot_do": "시장접근 제한 업종(Decree 31/2021) 단독 영위",
+    "licensing": "투자등록증(IRC) → 기업등록증(ERC). 2025년 정부조직 개편 이후 성(省)급 재정국(구 기획투자국 기능 이관)이 창구 — 지역별 확인 필요",
+    "timeline_statutory": "IRC 15일(투자방침 승인 불요 사업), ERC 3영업일",
+    "timeline_practical": "IRC·ERC·은행 자본계좌·세무 등록까지 2~4개월, 유통 영업허가(Decree 09/2018) 필요 시 +1~3개월 (추정)",
+    "capital": "일반 업종 법정 최소자본 없음, 단 사업계획 대비 적정성 심사. ERC 발급 후 90일 내 출자 완료 (기업법 2020 제47조)",
+    "pros": [
+     "100% 지배권, 이익·브랜드 통제",
+     "현지 매출·채용·제조 모두 가능"
+    ],
+    "cons": [
+     "설립·유지 비용(회계감사, 세무신고, 이전가격) 발생",
+     "업종별 추가 허가 필요 가능"
+    ],
+    "risks": [
+     "투자등록 범위 외 활동 시 제재",
+     "자본금 출자 지연 시 과태료·자본금 감액 등록 의무"
+    ],
+    "difficulty": 3,
+    "status": "검증필요"
+   },
+   {
+    "id": "joint_venture",
+    "name": "합작법인 (Joint Venture)",
+    "legal_basis": "투자법 2020, 기업법 2020 — 지분 상한은 업종별 양허·Decree 31/2021 적용",
+    "can_do": "외국인 지분 제한 업종 진입, 파트너 인허가·네트워크 활용",
+    "cannot_do": "정관·주주간계약 범위 밖 단독 의사결정",
+    "licensing": "FDI LLC와 동일 (IRC → ERC), 외국인 지분 51% 초과 시 외국인투자기업 절차 적용",
+    "timeline_statutory": "FDI LLC와 동일",
+    "timeline_practical": "파트너 실사·협상 포함 4~9개월 (추정)",
+    "capital": "지분율에 따라 분담",
+    "pros": [
+     "규제·B2G 접근성, 파트너 고객망",
+     "투자 리스크 분담"
+    ],
+    "cons": [
+     "경영권·이익 배분 갈등",
+     "파트너 실사 부담"
+    ],
+    "risks": [
+     "파트너 부정·평판 리스크 전이",
+     "교착(deadlock) 및 철수 조항 미비 시 회수 곤란"
+    ],
+    "difficulty": 4,
+    "status": "검증필요"
+   },
+   {
+    "id": "bcc",
+    "name": "사업협력계약 (BCC, Business Cooperation Contract)",
+    "legal_basis": "투자법 2020 (BCC 투자 형태)",
+    "can_do": "법인 설립 없이 현지 기업과 수익 배분형 사업",
+    "cannot_do": "독립 법인격 행사",
+    "licensing": "외국인 참여 BCC는 투자등록증(IRC) 필요",
+    "timeline_statutory": "IRC 절차 준용",
+    "timeline_practical": "2~4개월 (추정)",
+    "capital": "계약상 출자",
+    "pros": [
+     "법인 미설립, 특정 프로젝트 단위 협력에 적합"
+    ],
+    "cons": [
+     "실무 사례 제한, 세무 처리 복잡"
+    ],
+    "risks": [
+     "수익 배분·세무 해석 분쟁"
+    ],
+    "difficulty": 4,
+    "status": "검증필요"
+   }
+  ]
+ },
+ "sector_profiles": {
+  "last_reviewed": "2026-10",
+  "sectors": [
+   {
+    "id": "defense_dual_use",
+    "name": "방산·이중용도",
+    "keywords": [
+     "방산",
+     "방위",
+     "군",
+     "국방",
+     "무기",
+     "탄약",
+     "함정",
+     "항공기 부품",
+     "드론",
+     "무인기",
+     "레이더",
+     "야간투시",
+     "광학",
+     "전술",
+     "군수",
+     "defense",
+     "military",
+     "dual-use",
+     "uav",
+     "radar"
+    ],
+    "regulators": [
+     "베트남 국방부(Bộ Quốc phòng) 및 산하 국방산업총국 — 조달·기술협력 창구",
+     "베트남 공안부 — 보안·통신 장비 관련 일부 품목",
+     "한국 방위사업청 — 방산물자 수출허가",
+     "한국 산업통상자원부·무역안보관리원 — 전략물자 판정·수출허가"
+    ],
+    "key_rules": [
+     {
+      "text": "베트남 방위산업은 국방부 산하 국영기업 중심 구조이며, 외국인의 직접 생산·판매 진입은 원칙적으로 제한 — 기술이전·합작·현지 지정업체 경유 형태가 일반적",
+      "status": "검증필요"
+     },
+     {
+      "text": "국방안보산업 및 산업동원법(2024 제정, 2025.7 시행)에 따른 민간·외국 참여 범위 확인 필요",
+      "status": "검증필요"
+     },
+     {
+      "text": "한국산 방산물자는 방위사업법상 방위사업청 수출허가 대상, 이중용도 품목은 대외무역법상 전략물자 판정(무역안보관리원) 선행",
+      "status": "확인"
+     },
+     {
+      "text": "군용 물자의 베트남 수입은 국방부 지정 기관을 통한 통제 수입 구조 — 민간 수입 경로 확인 필요",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "품목별 전략물자 해당 여부 판정 선행 (Yestrade 사전판정)",
+     "최종사용자증명(EUC) 확보 절차 확인"
+    ],
+    "marketing_channels": [
+     "베트남 국방 전시회(Vietnam International Defence Expo) 등 정부 주관 전시",
+     "주베트남 대한민국대사관 국방무관부·KOTRA 협업",
+     "G2G 협의체·방산 협의회 네트워크"
+    ],
+    "data_sources": [
+     "SIPRI Arms Transfers Database",
+     "베트남 국방부 공식 발표·관영 매체(QĐND)",
+     "KOTRA 해외시장뉴스"
+    ],
+    "extra_risks": [
+     "정치·외교: 대중·대러 관계 등 지정학 변수, 미국 제재(CAATSA 등) 연계 여부",
+     "평판: 무기 수출 관련 국내외 여론",
+     "부패: 조달 과정 중개인 리스크 — 한국 국제뇌물방지법·베트남 형법"
+    ],
+    "force_flags": [
+     "defense_or_military"
+    ]
+   },
+   {
+    "id": "food",
+    "name": "식품·농수산",
+    "keywords": [
+     "식품",
+     "음료",
+     "라면",
+     "김치",
+     "소스",
+     "건강기능식품",
+     "농산물",
+     "수산물",
+     "과자",
+     "커피",
+     "주류",
+     "food",
+     "beverage",
+     "snack"
+    ],
+    "regulators": [
+     "보건부 식품안전국(VFA) — 자가공표·등록",
+     "농업환경부 — 동식물 검역 (2025 조직개편: 농업농촌개발부+천연자원환경부 통합)",
+     "산업무역부(MOIT) — 주류 등 일부 품목"
+    ],
+    "key_rules": [
+     {
+      "text": "포장식품은 Decree 15/2018/ND-CP에 따른 제품 자가공표(self-declaration), 건강기능식품·영아식품 등은 등록 대상",
+      "status": "확인"
+     },
+     {
+      "text": "수입식품 국가 검사(식품안전 검사) 방식: 간소·일반·강화 검사",
+      "status": "확인"
+     },
+     {
+      "text": "Decree 15/2018 대체·개정 동향(식품안전법 개정 논의) 확인 필요",
+      "status": "검증필요"
+     },
+     {
+      "text": "라벨링: Decree 43/2017/ND-CP 및 개정 Decree 111/2021/ND-CP — 베트남어 보조라벨 필수",
+      "status": "확인"
+     }
+    ],
+    "trade_notes": [
+     "VKFTA·RCEP·AKFTA 중 최저 세율 협정 선택 (원산지증명 Form VK/AK/RCEP)",
+     "콜드체인 물류·유통기한 잔여 기준 확인"
+    ],
+    "marketing_channels": [
+     "Shopee",
+     "Lazada",
+     "TikTok Shop",
+     "현대식 유통(Lotte Mart, Emart, WinMart, Co.opmart)",
+     "한인·K-푸드 매장",
+     "Facebook·Zalo 커뮤니티"
+    ],
+    "data_sources": [
+     "베트남 통계청(NSO)",
+     "베트남 관세청",
+     "aT 한국농수산식품유통공사",
+     "KOTRA",
+     "Euromonitor/Statista(유료)",
+     "Metric.vn(이커머스)"
+    ],
+    "extra_risks": [
+     "리콜·식품안전 이슈 시 SNS 확산 속도 빠름",
+     "위조·모조품(짝퉁) 리스크"
+    ],
+    "force_flags": [
+     "regulated_health"
+    ]
+   },
+   {
+    "id": "cosmetics",
+    "name": "화장품·뷰티",
+    "keywords": [
+     "화장품",
+     "뷰티",
+     "스킨케어",
+     "색조",
+     "헤어",
+     "향수",
+     "cosmetic",
+     "beauty",
+     "skincare"
+    ],
+    "regulators": [
+     "보건부 의약품관리국(DAV) — 화장품 공표(notification)"
+    ],
+    "key_rules": [
+     {
+      "text": "화장품은 시판 전 보건부(DAV)에 제품 공표 필요 — 공표번호 유효기간 5년 (Circular 06/2011/TT-BYT, ASEAN 화장품 지침 기반)",
+      "status": "확인"
+     },
+     {
+      "text": "공표 명의자는 베트남 내 법인(수입사·유통사 또는 자사 법인) — 파트너 변경 시 재공표 이슈",
+      "status": "확인"
+     },
+     {
+      "text": "화장품 관리 신규 시행령 제정 동향 확인 필요",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "제품정보파일(PIF) 준비",
+     "자유판매증명서(CFS) — 한국 식약처 발급, 영사확인 필요 여부 확인"
+    ],
+    "marketing_channels": [
+     "TikTok Shop",
+     "Shopee",
+     "Lazada",
+     "Hasaki·Guardian·Watsons 등 H&B",
+     "KOL·KOC 인플루언서",
+     "Facebook",
+     "Instagram"
+    ],
+    "data_sources": [
+     "KOTRA",
+     "대한화장품산업연구원",
+     "Metric.vn",
+     "Decision Lab",
+     "Q&Me 소비자조사"
+    ],
+    "extra_risks": [
+     "공표 명의가 파트너에 있으면 브랜드 통제권 상실",
+     "인플루언서 광고 규제(광고법 개정) 위반 리스크"
+    ],
+    "force_flags": [
+     "regulated_health"
+    ]
+   },
+   {
+    "id": "medical",
+    "name": "의료기기·의약·헬스케어",
+    "keywords": [
+     "의료기기",
+     "의약품",
+     "제약",
+     "병원",
+     "진단",
+     "헬스케어",
+     "medical",
+     "pharma",
+     "healthcare",
+     "diagnostic"
+    ],
+    "regulators": [
+     "보건부 의료기기·공사국 / 의약품관리국(DAV)"
+    ],
+    "key_rules": [
+     {
+      "text": "의료기기는 Decree 98/2021/ND-CP(및 개정 Decree 07/2023)에 따라 A/B/C/D 등급 분류 후 공표 또는 유통등록",
+      "status": "확인"
+     },
+     {
+      "text": "의약품은 약사법 2016 및 2024 개정법에 따라 유통등록(MA) 필요, 외국인투자기업의 의약품 유통 범위 제한",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "등록 명의자(License holder) 지정 전략",
+     "공공병원 입찰 규정"
+    ],
+    "marketing_channels": [
+     "공공·민간 병원 입찰",
+     "의료 전시회(Vietnam Medi-Pharm)",
+     "KOL 의사 네트워크"
+    ],
+    "data_sources": [
+     "베트남 보건부",
+     "KHIDI 한국보건산업진흥원",
+     "KOTRA"
+    ],
+    "extra_risks": [
+     "공공병원 입찰 부패 리스크",
+     "등록 지연에 따른 출시 일정 불확실성"
+    ],
+    "force_flags": [
+     "regulated_health"
+    ]
+   },
+   {
+    "id": "industrial",
+    "name": "기계·소재·산업재·부품",
+    "keywords": [
+     "기계",
+     "부품",
+     "장비",
+     "소재",
+     "금형",
+     "자동화",
+     "공구",
+     "철강",
+     "화학",
+     "플라스틱",
+     "정밀",
+     "machinery",
+     "equipment",
+     "parts",
+     "industrial"
+    ],
+    "regulators": [
+     "과학기술부 — 기술규정(QCVN) 적합성",
+     "산업무역부 — 일부 품목 수입 관리"
+    ],
+    "key_rules": [
+     {
+      "text": "QCVN 대상 품목은 수입 시 적합성 인증(CR 마크) 및 전문검사 필요",
+      "status": "확인"
+     },
+     {
+      "text": "중고 기계·설비 수입은 Decision 18/2019/QD-TTg 기준(연식 등) 적용",
+      "status": "확인"
+     },
+     {
+      "text": "화학물질은 화학법(2025 개정) 및 신고 의무 확인",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "HS코드 사전심사(Advance ruling) 검토",
+     "원산지 결정기준(CTH/RVC) 충족 여부"
+    ],
+    "marketing_channels": [
+     "산업 전시회(Vietnam Manufacturing Expo, MTA Vietnam 등)",
+     "한국계 공단 입주기업 네트워크",
+     "B2B 플랫폼·LinkedIn",
+     "현지 엔지니어링 대리점"
+    ],
+    "data_sources": [
+     "베트남 관세청",
+     "ITC Trade Map",
+     "KITA 무역통계",
+     "KOTRA",
+     "공단 입주 현황"
+    ],
+    "extra_risks": [
+     "중국산 저가 경쟁",
+     "AS·부품 공급 체계 미비 시 신뢰 하락"
+    ],
+    "force_flags": []
+   },
+   {
+    "id": "ict",
+    "name": "ICT·소프트웨어·플랫폼",
+    "keywords": [
+     "소프트웨어",
+     "SaaS",
+     "플랫폼",
+     "앱",
+     "IT",
+     "AI",
+     "보안",
+     "클라우드",
+     "통신",
+     "게임",
+     "핀테크",
+     "software",
+     "platform",
+     "app",
+     "fintech",
+     "telecom"
+    ],
+    "regulators": [
+     "과학기술부(구 정보통신부 통합) — 통신·디지털 서비스",
+     "베트남 중앙은행(SBV) — 핀테크·결제",
+     "공안부 — 사이버보안·개인정보"
+    ],
+    "key_rules": [
+     {
+      "text": "개인정보보호법(Law 91/2025/QH15, 2026.1 시행) 및 하위 시행령 — 개인정보 영향평가·국외이전 신고",
+      "status": "검증필요"
+     },
+     {
+      "text": "사이버보안법(2018) 및 Decree 53/2022 — 일부 서비스 데이터 현지 저장·지사 설치 요구 가능",
+      "status": "확인"
+     },
+     {
+      "text": "전자상거래·디지털 플랫폼, 해외 공급자 전자세금 등록(국외사업자 VAT·CIT) 의무",
+      "status": "확인"
+     },
+     {
+      "text": "디지털기술산업법(2025) 인센티브 적용 가능성",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "소프트웨어 수출은 서비스 무역 — 계약·원천세(FCT) 구조 검토"
+    ],
+    "marketing_channels": [
+     "Zalo OA",
+     "Facebook",
+     "Google Ads",
+     "스타트업 행사(Techfest)",
+     "현지 SI·리셀러 파트너"
+    ],
+    "data_sources": [
+     "Google-Temasek-Bain e-Conomy SEA",
+     "베트남 과학기술부",
+     "KOTRA",
+     "NIPA",
+     "Decision Lab"
+    ],
+    "extra_risks": [
+     "데이터 현지화·검열 요구",
+     "외국계약자세(FCT) 미처리 시 세무 리스크"
+    ],
+    "force_flags": [
+     "personal_data"
+    ]
+   },
+   {
+    "id": "consumer_retail",
+    "name": "소비재·유통·프랜차이즈",
+    "keywords": [
+     "소비재",
+     "생활용품",
+     "패션",
+     "의류",
+     "가전",
+     "유아",
+     "반려",
+     "프랜차이즈",
+     "카페",
+     "외식",
+     "retail",
+     "consumer",
+     "franchise",
+     "fashion"
+    ],
+    "regulators": [
+     "산업무역부 — 유통 영업허가(Decree 09/2018), 프랜차이즈 등록"
+    ],
+    "key_rules": [
+     {
+      "text": "외국인투자기업의 유통·소매는 Decree 09/2018/ND-CP 영업허가 필요, 1호점 외 소매점포 추가 시 경제수요심사(ENT) 대상 가능",
+      "status": "확인"
+     },
+     {
+      "text": "프랜차이즈는 해외에서 베트남으로 진입 시 산업무역부 등록 대상 (Decree 35/2006 및 개정)",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "제품별 QCVN 적용 여부(전기전자·유아용품 등)",
+     "베트남어 라벨"
+    ],
+    "marketing_channels": [
+     "Shopee",
+     "Lazada",
+     "TikTok Shop",
+     "Facebook",
+     "Zalo",
+     "쇼핑몰(Vincom, AEON, Lotte)",
+     "KOL·KOC"
+    ],
+    "data_sources": [
+     "NSO",
+     "Metric.vn",
+     "Q&Me",
+     "Decision Lab",
+     "KOTRA",
+     "Statista"
+    ],
+    "extra_risks": [
+     "이커머스 플랫폼 수수료·정책 변동",
+     "위조품·병행수입"
+    ],
+    "force_flags": []
+   },
+   {
+    "id": "services_education",
+    "name": "서비스·교육·컨설팅",
+    "keywords": [
+     "교육",
+     "학원",
+     "컨설팅",
+     "인력",
+     "관광",
+     "물류",
+     "의료관광",
+     "서비스",
+     "education",
+     "consulting",
+     "logistics",
+     "service"
+    ],
+    "regulators": [
+     "교육훈련부 — 교육기관 설립",
+     "산업무역부 — 물류",
+     "관할 부처별 상이"
+    ],
+    "key_rules": [
+     {
+      "text": "서비스 업종은 베트남 WTO 서비스 양허표 및 Decree 31/2021 조건부 업종 여부를 우선 확인",
+      "status": "확인"
+     },
+     {
+      "text": "외국인투자 교육기관 설립은 Decree 86/2018/ND-CP(및 개정) 최소 투자 요건 적용",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "서비스 대가 송금 시 외국계약자세(FCT) 검토"
+    ],
+    "marketing_channels": [
+     "Facebook",
+     "Zalo",
+     "Google",
+     "오프라인 설명회",
+     "현지 기관 MOU"
+    ],
+    "data_sources": [
+     "NSO",
+     "교육훈련부",
+     "KOTRA"
+    ],
+    "extra_risks": [
+     "조건부 업종 인허가 지연"
+    ],
+    "force_flags": []
+   },
+   {
+    "id": "energy_construction",
+    "name": "에너지·건설·인프라",
+    "keywords": [
+     "에너지",
+     "태양광",
+     "풍력",
+     "발전",
+     "건설",
+     "인프라",
+     "플랜트",
+     "수처리",
+     "환경",
+     "energy",
+     "construction",
+     "infrastructure",
+     "plant"
+    ],
+    "regulators": [
+     "산업무역부 — 전력",
+     "건설부 — 건설 허가·외국 시공사 허가",
+     "농업환경부 — 환경영향평가"
+    ],
+    "key_rules": [
+     {
+      "text": "외국 시공사는 건설부(또는 성 건설국) 건설활동 허가 필요",
+      "status": "확인"
+     },
+     {
+      "text": "전력개발계획(PDP8 및 2025 수정안)·직접전력구매(DPPA) 제도 확인",
+      "status": "검증필요"
+     }
+    ],
+    "trade_notes": [
+     "프로젝트 수입 면세 목록 등록 가능성"
+    ],
+    "marketing_channels": [
+     "발주처 직접 영업",
+     "EPC 협력",
+     "ODA·EDCF 사업 연계"
+    ],
+    "data_sources": [
+     "산업무역부",
+     "세계은행",
+     "ADB",
+     "KOTRA",
+     "한국수출입은행"
+    ],
+    "extra_risks": [
+     "인허가·토지 수용 지연",
+     "정책 변경(FIT 등) 소급 리스크"
+    ],
+    "force_flags": [
+     "government_customer"
+    ]
+   },
+   {
+    "id": "general",
+    "name": "일반 (업종 미분류)",
+    "keywords": [],
+    "regulators": [
+     "업종별 관할 부처 — 조사 필요"
+    ],
+    "key_rules": [
+     {
+      "text": "업종을 VSIC 코드로 확정한 뒤 Decree 31/2021 시장접근 목록 해당 여부 확인 필요",
+      "status": "확인"
+     }
+    ],
+    "trade_notes": [
+     "HS코드 확정 후 관세·전문검사 확인"
+    ],
+    "marketing_channels": [
+     "Facebook",
+     "Zalo",
+     "전시회",
+     "KOTRA 무역관 바이어 매칭"
+    ],
+    "data_sources": [
+     "NSO",
+     "베트남 관세청",
+     "KOTRA",
+     "ITC Trade Map"
+    ],
+    "extra_risks": [],
+    "force_flags": []
+   }
+  ]
+ },
+ "common_rules": {
+  "last_reviewed": "2026-10",
+  "rules": [
+   {
+    "area": "행정체계",
+    "text": "2025년 정부조직 개편으로 기획투자부가 재정부로 통합, 성(省)급 투자등록 창구는 재정국으로 이관. 2025.7부터 성급 행정구역 63→34개 통합, 군(郡)급 폐지 — 관할 창구·주소 표기 재확인 필요",
+    "status": "검증필요"
+   },
+   {
+    "area": "투자",
+    "text": "외국인투자 시장접근은 Decree 31/2021/ND-CP 부록(진입 금지 25개·조건부 59개 업종)과 WTO 양허표를 함께 적용",
+    "status": "확인"
+   },
+   {
+    "area": "법인세",
+    "text": "법인세 표준세율 20%. 신법인세법(Law 67/2025/QH15) 시행에 따른 중소기업 저율·인센티브 구조 변경 확인 필요",
+    "status": "검증필요"
+   },
+   {
+    "area": "글로벌최저한세",
+    "text": "연결매출 7.5억 유로 이상 다국적그룹은 국내최저한세(QDMTT) 적용 (Resolution 107/2023/QH15)",
+    "status": "확인"
+   },
+   {
+    "area": "부가가치세",
+    "text": "표준세율 10%, 일부 품목 한시 8% 인하 적용 — 적용 기간·대상 품목 재확인 필요",
+    "status": "검증필요"
+   },
+   {
+    "area": "외국계약자세",
+    "text": "해외 법인이 베트남 고객에게 서비스·로열티를 제공하면 외국계약자세(FCT: VAT+CIT) 원천징수 대상",
+    "status": "확인"
+   },
+   {
+    "area": "이중과세",
+    "text": "한-베 이중과세방지협정(1994) 적용 — 배당·이자·사용료 제한세율 확인",
+    "status": "확인"
+   },
+   {
+    "area": "관세·FTA",
+    "text": "한국산 수출 시 VKFTA(2015)·AKFTA·RCEP 중 유리한 협정 선택. 원산지증명서(Form VK/AK/RCEP) 및 직접운송 요건 충족 필요",
+    "status": "확인"
+   },
+   {
+    "area": "외환",
+    "text": "외국인 투자자는 베트남 내 직접투자자본계좌(DICA)를 통해 출자·이익 송금. 한국 측은 외국환거래법상 해외직접투자 신고(외국환은행) 선행",
+    "status": "확인"
+   },
+   {
+    "area": "노무",
+    "text": "외국인 근로자 노동허가(Work Permit) 및 지역별 최저임금(4개 권역) 적용 — 2026년 최저임금 인상분 확인 필요",
+    "status": "검증필요"
+   },
+   {
+    "area": "노무",
+    "text": "외국인 노동허가 신규 시행령(Decree 219/2025/ND-CP) 적용 여부 확인",
+    "status": "검증필요"
+   },
+   {
+    "area": "개인정보",
+    "text": "개인정보보호법(Law 91/2025/QH15, 2026.1.1 시행) — 개인정보 처리 시 영향평가·국외이전 서류 작성",
+    "status": "검증필요"
+   },
+   {
+    "area": "기업",
+    "text": "개정 기업법(2025) — 실소유자(beneficial owner) 정보 제출 의무 신설",
+    "status": "검증필요"
+   },
+   {
+    "area": "반부패",
+    "text": "베트남 형법상 뇌물죄(민간 부문 포함) 및 한국 국제상거래뇌물방지법 동시 적용 — 중개인·컨설턴트 대가 구조 검토",
+    "status": "확인"
+   }
+  ]
+ },
+ "research_modules": {
+  "last_reviewed": "2026-10",
+  "modules": [
+   {
+    "id": "MKT",
+    "title": "시장 규모·수요 구조",
+    "when": [
+     "market_research"
+    ],
+    "role": "베트남 산업·시장 분석 전문 리서처",
+    "questions": [
+     {
+      "code": "MKT-01",
+      "q": "베트남 {sector} 시장 규모(금액·물량)와 최근 5년 성장률, 향후 3~5년 전망치"
+     },
+     {
+      "code": "MKT-02",
+      "q": "{products} 관련 세부 시장(세그먼트)별 규모와 비중"
+     },
+     {
+      "code": "MKT-03",
+      "q": "{hs_codes} 기준 베트남 수입액 추이(최근 5년)와 상위 수입국 점유율, 한국산 비중"
+     },
+     {
+      "code": "MKT-04",
+      "q": "주요 수요처·고객군 구조 ({customers}) 및 구매 의사결정 방식"
+     },
+     {
+      "code": "MKT-05",
+      "q": "{cities} 지역별 수요 차이와 우선 공략 지역 근거"
+     },
+     {
+      "code": "MKT-06",
+      "q": "수요 견인 요인(정책·인구·소득·산업 투자)과 저해 요인"
+     }
+    ]
+   },
+   {
+    "id": "CMP",
+    "title": "경쟁 구도",
+    "when": [
+     "market_research",
+     "marketing_research"
+    ],
+    "role": "경쟁 분석 전문 컨설턴트",
+    "questions": [
+     {
+      "code": "CMP-01",
+      "q": "베트남 내 {products} 주요 경쟁사 상위 5~10개(현지·한국·중국·일본·기타)와 추정 점유율"
+     },
+     {
+      "code": "CMP-02",
+      "q": "경쟁사별 가격대·유통 채널·포지셔닝"
+     },
+     {
+      "code": "CMP-03",
+      "q": "한국 기업의 진출 사례(성공·실패)와 시사점"
+     },
+     {
+      "code": "CMP-04",
+      "q": "진입 장벽(인증·유통 장악·가격) 및 {company}의 차별화 가능 영역"
+     }
+    ]
+   },
+   {
+    "id": "REG",
+    "title": "규제·시장접근",
+    "when": [
+     "market_research",
+     "entity_setup",
+     "trade"
+    ],
+    "role": "베트남 투자·통상 규제 전문 법률 리서처 (법률 자문이 아닌 조사 목적)",
+    "questions": [
+     {
+      "code": "REG-01",
+      "q": "{products} 사업의 VSIC 업종코드와 Decree 31/2021/ND-CP 외국인 시장접근 제한 해당 여부, WTO 양허상 외국인 지분 상한"
+     },
+     {
+      "code": "REG-02",
+      "q": "제품 판매 전 필요한 인허가·등록·공표·인증(관할 기관, 소요 기간, 명의자 요건)"
+     },
+     {
+      "code": "REG-03",
+      "q": "{hs_codes}의 수입 시 전문검사·적합성 인증(QCVN/CR) 및 수입 허가 대상 여부"
+     },
+     {
+      "code": "REG-04",
+      "q": "라벨링·광고·표시 규제 핵심 사항"
+     },
+     {
+      "code": "REG-05",
+      "q": "2025~2026년 시행·예정된 관련 법령 개정 사항과 영향"
+     }
+    ]
+   },
+   {
+    "id": "TRD",
+    "title": "수출입·관세·물류",
+    "when": [
+     "trade"
+    ],
+    "role": "국제통상·관세 전문가",
+    "questions": [
+     {
+      "code": "TRD-01",
+      "q": "{hs_codes}의 베트남 MFN 관세율과 VKFTA·AKFTA·RCEP 협정세율 비교(2026년 기준), 부가세·특별소비세"
+     },
+     {
+      "code": "TRD-02",
+      "q": "원산지 결정기준(품목별 원산지 규정)과 원산지증명 발급 절차"
+     },
+     {
+      "code": "TRD-03",
+      "q": "주요 통관 서류·소요 시간·주요 항구/공항(하이퐁, 깟라이, 노이바이, 떤선녓) 실무 이슈"
+     },
+     {
+      "code": "TRD-04",
+      "q": "한국→베트남 해상·항공 운임 수준과 리드타임, 현지 창고·3PL 옵션"
+     },
+     {
+      "code": "TRD-05",
+      "q": "베트남→제3국 수출 시(해당 시) 원산지·수출 인센티브 요건"
+     }
+    ]
+   },
+   {
+    "id": "CHN",
+    "title": "유통채널·파트너",
+    "when": [
+     "market_research",
+     "marketing_research"
+    ],
+    "role": "베트남 유통·B2B 세일즈 전문가",
+    "questions": [
+     {
+      "code": "CHN-01",
+      "q": "{products}의 일반적인 유통 구조(수입사→도매→소매/직판/입찰)와 단계별 마진율"
+     },
+     {
+      "code": "CHN-02",
+      "q": "유력 수입사·유통사·대리점 후보 유형과 선정 기준"
+     },
+     {
+      "code": "CHN-03",
+      "q": "독점 대리점 계약 시 일반 조건(기간·최소구매·해지)과 분쟁 사례"
+     },
+     {
+      "code": "CHN-04",
+      "q": "공략 우선 채널 3개와 각 채널 진입 비용·소요 기간"
+     }
+    ]
+   },
+   {
+    "id": "MKG",
+    "title": "마케팅·소비자·브랜드",
+    "when": [
+     "marketing_research"
+    ],
+    "role": "베트남 디지털·B2B 마케팅 전략가",
+    "questions": [
+     {
+      "code": "MKG-01",
+      "q": "목표 고객({customers})의 인구통계·구매 행태·정보 탐색 채널"
+     },
+     {
+      "code": "MKG-02",
+      "q": "베트남 내 한국 브랜드·한국산 제품 인식(신뢰도, 가격 수용도) 최신 조사 결과"
+     },
+     {
+      "code": "MKG-03",
+      "q": "효과적인 마케팅 채널(Facebook, Zalo, TikTok, YouTube, 이커머스, 전시회, KOL 등)별 비용 수준과 성과 벤치마크"
+     },
+     {
+      "code": "MKG-04",
+      "q": "가격 전략 — 경쟁사 대비 적정 가격대와 프로모션 관행"
+     },
+     {
+      "code": "MKG-05",
+      "q": "광고·인플루언서 마케팅 관련 규제와 금지 표현"
+     },
+     {
+      "code": "MKG-06",
+      "q": "{company}에 적합한 진입 초기 6개월 마케팅 KPI와 예산 배분 예시"
+     }
+    ]
+   },
+   {
+    "id": "ENT",
+    "title": "법인·지사·사무소 설립 실무",
+    "when": [
+     "entity_setup"
+    ],
+    "role": "베트남 외국인투자 설립 실무 전문가 (법률 자문이 아닌 절차 조사 목적)",
+    "questions": [
+     {
+      "code": "ENT-01",
+      "q": "{company}의 목적({objective})에 맞는 진출형태(대표사무소·지점·100% 외투법인·합작법인·BCC) 비교와 각 형태의 허용 활동 범위"
+     },
+     {
+      "code": "ENT-02",
+      "q": "선택 가능한 형태별 설립 절차 단계·관할 기관(2025년 조직개편 반영)·법정/실무 소요 기간"
+     },
+     {
+      "code": "ENT-03",
+      "q": "형태별 필요 서류 목록(본국 서류 공증·영사확인 포함)"
+     },
+     {
+      "code": "ENT-04",
+      "q": "자본금 요건·적정 수준 판단 기준·출자 기한·DICA 계좌 개설 절차"
+     },
+     {
+      "code": "ENT-05",
+      "q": "{cities} 지역별 사무실 임대료 수준과 공단·경제구역 입주 시 인센티브"
+     },
+     {
+      "code": "ENT-06",
+      "q": "설립 후 유지 의무(회계감사, 세무신고, 이전가격, 노동허가, 보고) 및 연간 유지비 범위"
+     },
+     {
+      "code": "ENT-07",
+      "q": "설립·운영 단계 주요 세제(법인세, 부가세, FCT) 및 투자 인센티브 적용 가능성"
+     }
+    ]
+   },
+   {
+    "id": "RSK",
+    "title": "리스크·이해관계자",
+    "when": [
+     "market_research",
+     "entity_setup"
+    ],
+    "role": "정치·규제·평판 리스크 분석가",
+    "questions": [
+     {
+      "code": "RSK-01",
+      "q": "{sector} 분야의 베트남 정치·정책 리스크(정책 변동, 지정학, 국영기업 경쟁)"
+     },
+     {
+      "code": "RSK-02",
+      "q": "주요 이해관계자 지도(정부 부처, 협회, 국영기업, 경쟁사, 한국 측 지원기관)와 영향력"
+     },
+     {
+      "code": "RSK-03",
+      "q": "부패·컴플라이언스 리스크 사례와 예방 관행"
+     },
+     {
+      "code": "RSK-04",
+      "q": "투자금·매출 회수(송금, 환율, 대금 지급 관행) 리스크"
+     }
+    ]
+   },
+   {
+    "id": "DEF",
+    "title": "방산·이중용도 특화",
+    "when": [
+     "defense_or_military",
+     "dual_use_or_strategic"
+    ],
+    "role": "방산 수출통제·국방 조달 전문 리서처 (법률 자문이 아닌 조사 목적)",
+    "questions": [
+     {
+      "code": "DEF-01",
+      "q": "베트남 국방 조달 구조(국방부·국방산업총국·지정 수입업체)와 외국 기업 참여 경로"
+     },
+     {
+      "code": "DEF-02",
+      "q": "국방안보산업 및 산업동원법(2024) 주요 내용과 외국·민간 기업 참여 허용 범위"
+     },
+     {
+      "code": "DEF-03",
+      "q": "{products}의 한국 측 수출통제(방위사업청 수출허가, 전략물자 판정) 해당 가능성과 절차·기간"
+     },
+     {
+      "code": "DEF-04",
+      "q": "한-베 국방·방산 협력 현황(MOU, 공동위원회, 최근 계약 사례)"
+     },
+     {
+      "code": "DEF-05",
+      "q": "제3국 제재(미국 등)·재수출 통제가 거래에 미칠 영향"
+     },
+     {
+      "code": "DEF-06",
+      "q": "현지 에이전트·중개인 활용 관행과 반부패 리스크 관리 방안"
+     }
+    ]
+   }
+  ]
+ },
+ "setup_steps": {
+  "common_pre": [
+   {
+    "step": "한국 측 해외직접투자 신고(외국환은행) 요건 확인",
+    "owner": "B",
+    "weeks": 1
+   },
+   {
+    "step": "본사 서류(사업자등록증·정관·재무제표·대표자 여권) 공증·영사확인",
+    "owner": "B",
+    "weeks": 3
+   },
+   {
+    "step": "현지 사무실 후보 조사·가계약(주소 증빙 확보)",
+    "owner": "C",
+    "weeks": 3
+   }
+  ],
+  "steps": {
+   "distributor": [
+    {
+     "step": "유통사·대리점 후보 롱리스트(20개) 작성 및 1차 스크리닝",
+     "owner": "A",
+     "weeks": 2
+    },
+    {
+     "step": "후보사 실사(법인등록·수입 자격·재무·평판·소송)",
+     "owner": "C",
+     "weeks": 3
+    },
+    {
+     "step": "대리점 계약서 초안(독점 범위·KPI·해지·등록 명의 이관 조항) — 현지 변호사 검토",
+     "owner": "B",
+     "weeks": 3
+    },
+    {
+     "step": "제품 등록·공표 명의 및 비용 분담 확정",
+     "owner": "B",
+     "weeks": 2
+    },
+    {
+     "step": "초도 물량 선적·판촉 계획 수립",
+     "owner": "C",
+     "weeks": 4
+    }
+   ],
+   "rep_office": [
+    {
+     "step": "관할 산업무역국(DOIT) 확인 및 신청서류 작성",
+     "owner": "B",
+     "weeks": 2
+    },
+    {
+     "step": "대표사무소 설립허가 신청·수령",
+     "owner": "B",
+     "weeks": 2
+    },
+    {
+     "step": "인장 등록·세무코드 신고·은행 계좌 개설",
+     "owner": "B",
+     "weeks": 2
+    },
+    {
+     "step": "수석대표 노동허가·현지 인력 채용",
+     "owner": "C",
+     "weeks": 4
+    },
+    {
+     "step": "연간 활동보고 일정 등록",
+     "owner": "B",
+     "weeks": 1
+    }
+   ],
+   "branch": [
+    {
+     "step": "산업무역부(MOIT) 사전 협의 — 허가 업종 범위 확인",
+     "owner": "B",
+     "weeks": 3
+    },
+    {
+     "step": "지점 설립허가 신청·관계 부처 협의 대응",
+     "owner": "B",
+     "weeks": 8
+    },
+    {
+     "step": "세무·은행·인장 등록",
+     "owner": "B",
+     "weeks": 2
+    }
+   ],
+   "fdi_llc": [
+    {
+     "step": "업종코드(VSIC)·시장접근 조건 확정 및 투자 계획서 작성",
+     "owner": "B",
+     "weeks": 2
+    },
+    {
+     "step": "투자등록증(IRC) 신청 — 성(省) 재정국/경제구역관리위",
+     "owner": "B",
+     "weeks": 4
+    },
+    {
+     "step": "기업등록증(ERC) 신청·인장 제작·공고",
+     "owner": "B",
+     "weeks": 1
+    },
+    {
+     "step": "직접투자자본계좌(DICA)·운영계좌 개설, 90일 내 자본금 납입",
+     "owner": "B",
+     "weeks": 4
+    },
+    {
+     "step": "세무 등록·전자세금계산서·회계 담당 선임",
+     "owner": "B",
+     "weeks": 2
+    },
+    {
+     "step": "업종별 하위 허가(유통 영업허가 Decree 09/2018 등) 신청",
+     "owner": "B",
+     "weeks": 6
+    },
+    {
+     "step": "법인장 노동허가·현지 채용",
+     "owner": "C",
+     "weeks": 6
+    }
+   ],
+   "joint_venture": [
+    {
+     "step": "합작 파트너 후보 발굴·1차 미팅",
+     "owner": "C",
+     "weeks": 4
+    },
+    {
+     "step": "파트너 실사(법률·재무·평판·정치적 연계)",
+     "owner": "A",
+     "weeks": 4
+    },
+    {
+     "step": "주주간계약(지분·이사회·교착·철수·경업금지) 협상 — 현지·한국 변호사 검토",
+     "owner": "B",
+     "weeks": 6
+    },
+    {
+     "step": "IRC·ERC 신청 및 자본금 납입",
+     "owner": "B",
+     "weeks": 6
+    },
+    {
+     "step": "합작법인 운영 체계(보고·내부통제) 구축",
+     "owner": "C",
+     "weeks": 4
+    }
+   ],
+   "bcc": [
+    {
+     "step": "BCC 상대방 선정·실사",
+     "owner": "C",
+     "weeks": 4
+    },
+    {
+     "step": "BCC 계약 구조·세무 처리 검토 — 세무 전문가",
+     "owner": "B",
+     "weeks": 4
+    },
+    {
+     "step": "IRC 신청·수령",
+     "owner": "B",
+     "weeks": 4
+    }
+   ]
+  },
+  "defense_extra": [
+   {
+    "step": "전략물자 사전판정(Yestrade) 및 방위사업청 수출허가 사전 상담",
+    "owner": "B",
+    "weeks": 4
+   },
+   {
+    "step": "주베트남 대사관 국방무관부·KOTRA 협의",
+    "owner": "C",
+    "weeks": 2
+   },
+   {
+    "step": "최종사용자증명(EUC) 확보 절차 확인",
+    "owner": "B",
+    "weeks": 3
+   }
+  ]
+ },
+ "team": {
+  "members": [
+   {
+    "id": "A",
+    "name": "직원 A",
+    "role": "리서치·데이터",
+    "external_name": "시장분석팀",
+    "owns": [
+     "MKT",
+     "CMP",
+     "MKG",
+     "TRD"
+    ]
+   },
+   {
+    "id": "B",
+    "name": "직원 B",
+    "role": "인허가·서류·행정",
+    "external_name": "인허가지원팀",
+    "owns": [
+     "REG",
+     "ENT",
+     "DEF"
+    ]
+   },
+   {
+    "id": "C",
+    "name": "직원 C",
+    "role": "파트너·바이어·현장",
+    "external_name": "현지대응팀",
+    "owns": [
+     "CHN",
+     "RSK"
+    ]
+   }
+  ],
+  "pm": {
+   "name": "PM",
+   "external_name": "프로젝트총괄"
+  }
+ }
+}
