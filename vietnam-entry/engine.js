@@ -407,7 +407,7 @@ ${OUTPUT_RULES}`;
     const ext = (opts.audience || "external") === "external";
     const author = opts.author || "강동조 · 베트남 진출 컨설팅";
     const d = diag.data, ctx = diag.context, rec = diag.recommendation, p = rec.primary;
-    const today = new Date().toISOString().slice(0, 10);
+    const today = new Date().toLocaleDateString("sv-SE");
     const dels = d.project.deliverables.map((x) => DELIVERABLES[x]).join(", ");
     const risks = riskMatrix(diag);
     const hasMerge = merged && merged.llms && merged.llms.length;
@@ -453,7 +453,7 @@ ${OUTPUT_RULES}`;
     const facts = [], ests = [], unks = [];
     if (hasMerge) for (const [code, r] of Object.entries(merged.results)) {
       const b = r.best, t = b ? `${code} ${b.answer.slice(0, 90)}` : `${code} ${r.question.slice(0, 60)}`;
-      if (r.status === "교차확인") facts.push(t);
+      if (r.status === "교차확인") ests.push(t + " (AI 답변 일치 · 원문 미검증)");
       else if (r.status === "단일출처" || r.status === "추정") ests.push(t + (r.status === "단일출처" ? " (단일출처)" : ""));
       else unks.push(`${t} [${r.status}]`);
     }
@@ -461,7 +461,7 @@ ${OUTPUT_RULES}`;
     const n = Math.max(facts.length, ests.length, unks.length, 1);
     const pad = (xs) => xs.concat(Array(n - xs.length).fill(""));
     const F = pad(facts), E = pad(ests), U = pad(unks);
-    const split = tbl(["확인된 사실", "합리적 추정", "미확인·검증 필요"], F.map((x, i) => [x, E[i], U[i]]));
+    const split = tbl(["판단 기준상 확인 표기 · 현행성 재확인 필요", "추정·AI 비교 결과 · 원문 미검증", "미확인·검증 필요"], F.map((x, i) => [x, E[i], U[i]]));
 
     let conflicts = "- (교차검증 전)";
     if (hasMerge) {
@@ -491,7 +491,9 @@ ${OUTPUT_RULES}`;
 
 작성: ${author} · 작성일: ${today} · 범위: ${dels}
 
-> 본 보고서는 공개 자료 및 다수 AI 리서치 결과를 교차검증해 작성한 초안이며, 법률·세무 자문을 대체하지 않습니다.
+판단 기준 데이터: ${kb.entity_types.last_reviewed} · 검토 상태: 전문가 검토 전 초안
+
+> ${hasMerge ? "본 보고서는 입력 정보 기반 진단에 AI 답변 비교 결과를 반영한 초안입니다. AI 답변의 일치는 사실 확인을 의미하지 않으며 원문 출처 대조가 필요합니다." : "본 보고서는 입력 정보와 사전 정의된 판단 기준으로 작성한 초기 진단 초안입니다. 외부 조사 결과는 아직 반영되지 않았습니다."} 법률·세무 자문을 대체하지 않습니다.
 > 각 수치와 규정은 '확인된 사실 / 합리적 추정 / 미확인·검증 필요'로 구분 표기했습니다.
 
 ## 1. 요약

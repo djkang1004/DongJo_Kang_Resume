@@ -140,40 +140,52 @@
     section.card { border: 0; padding: 0; }
   }
 </style>
+<link rel="stylesheet" href="advisory.css">
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../"><b>강동조</b><span>Vietnam Entry Advisory</span></a>
     <nav class="steps" aria-label="단계">
-      <a href="#s1">1 정보 입력</a><a href="#s2">2 진단</a><a href="#s3">3 조사 프롬프트</a><a href="#s4">4 교차검증</a><a href="#s5">5 보고서</a><a href="../">이력서 ↩</a>
+      <a href="#s1">기업 진단</a><a href="#s2">진단 결과</a><a href="#s5">보고서</a><a href="#advisory">상담 안내</a><a href="../">컨설턴트 소개 ↗</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="hero">
-    <div class="eyebrow">VIETNAM ENTRY DIAGNOSTIC</div>
-    <h1>회사 정보만 입력하면<br>베트남 진출 진단부터 실행계획까지</h1>
-    <p>시장조사 · 마케팅 조사 · 수출입 · 법인/지사/사무소 설립. 베트남 현지 FDI 컨설팅 실무 기준으로 핵심 쟁점, 진출형태 비교, 리스크, 실행 로드맵과 AI 조사 프롬프트를 자동으로 만들어 드립니다.</p>
-    <div class="chips">
-      <span class="chip">입력 정보는 서버로 전송되지 않음 (브라우저 내 처리)</span>
-      <span class="chip">확인된 사실 / 추정 / 미확인 구분</span>
-      <span class="chip">여러 AI 답변 교차검증</span>
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-copy">
+      <div class="eyebrow">VIETNAM ENTRY ADVISORY</div>
+      <h1 id="heroTitle">베트남 진출,<br>우리 기업에 맞는<br><em>경로부터 확인하세요.</em></h1>
+      <p>제품, 고객, 투자 계획을 바탕으로 진출 방식과 주요 리스크를 정리합니다. 초기 진단에서 현지 조사와 실행 지원까지, 다음 결정을 위한 기준을 확인하세요.</p>
+      <div class="bar hero-actions"><a class="btn" href="#s1">진출 진단 시작 <span aria-hidden="true">↗</span></a><button class="btn ghost" id="sampleReportBtn" type="button">샘플 보고서 보기</button></div>
+      <p class="hero-footnote">회원가입 없이 시작 · 입력 정보는 브라우저에서 처리</p>
     </div>
-  </div>
+    <aside class="hero-preview" aria-label="진단 결과물 안내">
+      <div class="preview-top"><span>DECISION BRIEF</span><span class="preview-tag">산출물 안내</span></div>
+      <h2>진출 검토의 핵심을<br>한눈에.</h2>
+      <ol class="brief-list"><li><span>01</span><div><b>기업에 맞는 진출 경로</b><small>유통사 · 대표사무소 · 지점 · 법인 비교</small></div></li><li><span>02</span><div><b>먼저 확인할 리스크</b><small>시장 접근 · 인허가 · 운영 조건</small></div></li><li><span>03</span><div><b>실행 순서와 검토 과제</b><small>담당 조직 · 예상 일정 · 추가 확인 항목</small></div></li></ol>
+      <div class="preview-bottom">규칙 기반 초기 진단 <span>전문가 검토 전 초안</span></div>
+    </aside>
+  </section>
+  <div class="trust-strip"><span>시장·고객 조사</span><span>수출입·제품 인증</span><span>법인·거점 설립</span><span>현지 실행 지원</span></div>
+  <section class="service-intro" aria-labelledby="serviceTitle"><div><span class="eyebrow">FROM INSIGHT TO ACTION</span><h2 id="serviceTitle">검토 단계에서 실행 단계까지</h2></div><p>베트남 진출을 검토하는 기업과 기존 현지 사업을 확장하는 기업을 위한 진단입니다. 입력 기반 초안을 확인한 뒤, 추가 조사와 전문가 검토가 필요한 범위를 구체화할 수 있습니다.</p></section>
+  <dialog id="sampleDialog" aria-labelledby="sampleTitle"><div class="sample-toolbar"><div><span class="eyebrow">ILLUSTRATIVE REPORT</span><h2 id="sampleTitle">K-뷰티 기업 · 샘플 보고서</h2></div><button class="btn ghost sm" id="closeSample" type="button">닫기</button></div><p class="alert">가상 기업 정보로 생성한 예시입니다. 실제 수행 사례나 검증 완료 보고서가 아닙니다. 현재 입력 내용은 변경되지 않습니다.</p><div class="md" id="sampleReportOut"></div></dialog>
 
   <!-- 1. 입력 -->
   <section class="card" id="s1" aria-labelledby="h1t">
-    <div class="sec-head"><span class="num">01</span><h2 id="h1t">회사 정보 입력</h2>
-      <p>모르는 항목은 비워 두셔도 됩니다. 비어 있는 항목은 보고서에 '추가 확인이 필요한 사항'으로 표시됩니다.</p></div>
+    <div class="sec-head"><span class="num">01</span><h2 id="h1t">우리 기업의 진출 조건을 알려주세요</h2>
+      <p>3단계로 나누어 입력합니다. * 항목은 진단에 필요하며, 나머지는 모르는 경우 비워 두셔도 됩니다. 비어 있는 항목은 보고서에 '추가 확인이 필요한 사항'으로 표시됩니다.</p></div>
     <div class="bar" style="margin-bottom:20px">
       <span class="note">예시 불러오기:</span>
       <button class="btn ghost sm" type="button" data-sample="defense">방산 광학 부품 기업</button>
       <button class="btn ghost sm" type="button" data-sample="cosmetics">K-뷰티 브랜드</button>
       <button class="btn ghost sm" type="button" id="resetBtn">초기화</button>
     </div>
-    <form id="intake" autocomplete="off">
+    <div class="wizard-nav" aria-label="기업 정보 입력 단계"><button type="button" data-step="0" aria-current="step"><span>01</span> 기업 개요</button><button type="button" data-step="1"><span>02</span> 진출 목표</button><button type="button" data-step="2"><span>03</span> 운영·규제</button></div>
+    <div class="wizard-progress"><progress id="intakeProgress" max="3" value="1" aria-label="입력 단계"></progress><span id="stepStatus" role="status">1 / 3 · 기업 개요</span></div>
+    <p id="formError" class="alert" role="alert" hidden></p>
+    <form id="intake" autocomplete="off" novalidate>
       <fieldset>
         <legend>의뢰 범위</legend>
         <div class="checks" id="deliverables">
@@ -211,7 +223,7 @@
           <div><label for="f_partner">기존 현지 파트너</label><input type="text" id="f_partner" data-k="vietnam.existing_partners"></div>
           <div><label for="f_stage">진출 단계</label><select id="f_stage" data-k="vietnam.entry_stage">
             <option value="exploring">타당성 검토 중</option><option value="committed">진출 결정</option><option value="expanding">확장 단계</option></select></div>
-          <div><label for="f_budget">초기 예산 <small>천 달러</small></label><input type="number" id="f_budget" data-k="vietnam.budget_usd_k" data-num min="0"></div>
+          <div><label for="f_budget">초기 예산 <small>천 USD · 예: 100 = 10만 달러</small></label><input type="number" id="f_budget" data-k="vietnam.budget_usd_k" data-num min="0"></div>
           <div><label for="f_time">목표 시점 <small>개월 후</small></label><input type="number" id="f_time" data-k="vietnam.timeline_months" data-num min="0"></div>
           <div><label for="f_hire">1년 내 현지 채용 <small>명</small></label><input type="number" id="f_hire" data-k="vietnam.local_hiring_plan" data-num min="0"></div>
           <div><label>베트남 안에서 직접 판매·세금계산서 발행</label>
@@ -235,7 +247,7 @@
       <fieldset>
         <div class="grid"><div class="full"><label for="f_cons">제약 조건·메모</label><textarea id="f_cons" data-k="constraints" placeholder="예: 지분 51% 이상 유지, 핵심 기술 이전 불가"></textarea></div></div>
       </fieldset>
-      <div class="bar end"><span class="note" id="saveNote"></span><button class="btn" type="submit">진단 실행 →</button></div>
+      <div class="wizard-actions"><button class="btn ghost" type="button" id="previousStep">이전 단계</button><span class="note" id="saveNote"></span><button class="btn" type="button" id="nextStep">다음 단계 →</button><button class="btn" id="submitDiagnosis" type="submit">진단 결과 확인 →</button></div>
     </form>
   </section>
 
@@ -245,6 +257,7 @@
     <div id="diagOut"><p class="note">1단계에서 진단을 실행하면 결과가 표시됩니다.</p></div>
   </section>
 
+  <details class="research-tools" id="researchTools"><summary><span>고급 조사 도구</span><span class="note">AI 조사 프롬프트 · 답변 비교 (선택)</span></summary><p class="research-note">초기 진단과 보고서는 바로 확인할 수 있습니다. 심화 조사가 필요하면 아래 도구를 활용하세요. AI 답변의 일치는 사실 확인을 뜻하지 않으며 원문 출처 대조가 필요합니다.</p>
   <!-- 3. 프롬프트 -->
   <section class="card locked" id="s3" aria-labelledby="h3t">
     <div class="sec-head"><span class="num">03</span><h2 id="h3t">AI 조사 프롬프트</h2>
@@ -263,6 +276,8 @@
     <div id="mergeOut"></div>
   </section>
 
+  </details>
+
   <!-- 5. 보고서 -->
   <section class="card locked" id="s5" aria-labelledby="h5t">
     <div class="sec-head"><span class="num">05</span><h2 id="h5t">보고서 초안</h2><p>고객사 제출본은 권고 어투로, 내부 검토본은 담당자 배분형으로 작성됩니다.</p></div>
@@ -274,13 +289,13 @@
       <button class="btn ghost sm" type="button" id="dlReport">Markdown 다운로드</button>
       <button class="btn ghost sm" type="button" id="printReport">PDF로 저장(인쇄)</button>
     </div>
-    <div class="md" id="reportOut"></div>
+    <div id="reportCover" class="report-cover"></div><div class="md" id="reportOut"></div>
   </section>
 
-  <div class="cta">
+  <div class="cta" id="advisory">
     <div class="eyebrow" style="color:#cbb796">CONSULTING</div>
     <h2 style="margin-top:16px">진단 결과를 실행으로 옮기려면</h2>
-    <p>현지 실사, 파트너 발굴, 인허가 대행, 고객사 제출용 보고서·발표자료 작성까지 직접 지원합니다.</p>
+    <p>진단에서 확인한 과제를 바탕으로 현지 실사, 파트너 발굴, 인허가 지원과 보고서 작성 범위를 상담합니다. 컨설턴트의 이력과 포트폴리오를 확인한 뒤 필요한 지원을 요청하세요.</p>
     <div class="bar" style="justify-content:center">
       <a class="btn" id="mailCta" href="mailto:djkang1004@gmail.com?subject=%5B%EB%B2%A0%ED%8A%B8%EB%82%A8%20%EC%A7%84%EC%B6%9C%20%EC%83%81%EB%8B%B4%5D">진단 결과로 상담 신청</a>
       <a class="btn ghost" href="../">강동조 이력·포트폴리오 보기</a>
@@ -363,7 +378,7 @@
     row.className = "row";
     row.innerHTML = `<input type="text" placeholder="제품명" aria-label="제품명" data-p="name"><input type="text" placeholder="설명 (용도·고객)" aria-label="제품 설명" data-p="description"><input type="text" placeholder="HS코드" aria-label="HS코드" data-p="hs_code"><button class="btn ghost sm" type="button" aria-label="제품 삭제">삭제</button>`;
     for (const k of ["name", "description", "hs_code"]) $(`[data-p=${k}]`, row).value = p[k] || "";
-    $("button", row).onclick = () => { row.remove(); if (!$$("#products .row").length) $("#products").appendChild(productRow()); };
+    $("button", row).onclick = () => { row.remove(); if (!$$("#products .row").length) $("#products").appendChild(productRow()); invalidateResults(); };
     return row;
   }
   function setPath(o, path, val) { const ks = path.split("."); let c = o; ks.slice(0, -1).forEach((k) => (c = c[k] = c[k] || {})); c[ks[ks.length - 1]] = val; }
@@ -401,14 +416,15 @@
   }
 
   // ------------------------------------------------ 렌더링
-  function unlock() { ["#s2", "#s3", "#s4", "#s5"].forEach((s) => $(s).classList.remove("locked")); }
+  function unlock() { ["#s2", "#s3", "#s4", "#s5"].forEach((s) => { $(s).classList.remove("locked"); $(s).inert=false; }); }
 
   function renderDiag() {
     const g = DIAG, rec = g.recommendation, miss = g.missing.critical.concat(g.missing.decision);
     const max = Math.max(...g.entities.map((e) => e.score), 1);
     const risks = VNEngine.riskMatrix(g).slice().sort((a, b) => b.lvl - a.lvl);
+    const summary = `<div class="decision-summary"><div class="decision-primary"><span class="eyebrow">YOUR ENTRY PATH</span><h3>${esc(rec.primary.name)}</h3><p>${esc(rec.phased || rec.primary.reasons[0] || "추가 정보를 확인한 뒤 적합성을 검토하세요.")}</p><span class="badge">입력 기반 권고 · 전문가 검토 전</span></div><div class="decision-risks"><h3>우선 검토할 리스크 3가지</h3>${risks.slice(0,3).map(r => `<div><b>${esc(r.cat)} <span class="risk-level">${VNEngine.LEVEL[r.lvl]}</span></b><p>${esc(r.mit)}</p></div>`).join("")}</div></div><div class="next-action"><b>다음 행동</b><span>${esc(miss.length ? miss.slice(0,3).join(" · ") + " 확인" : "HS·업종코드와 시장접근 조건을 원문 및 전문가 검토로 확인")}</span><a class="btn ghost sm" href="#s5">보고서 확인 ↗</a></div>`;
     const flags = { defense_or_military: "방산", dual_use_or_strategic: "전략물자", government_customer: "B2G", personal_data: "개인정보", regulated_health: "보건 규제" };
-    let h = "";
+    let h = summary;
     h += miss.length
       ? `<div class="alert"><b>정확도를 높이려면 먼저 확인할 항목:</b> ${esc(miss[0])}${miss.length > 1 ? ` <span class="note">(외 ${miss.length - 1}건: ${esc(miss.slice(1).join(", "))})</span>` : ""}</div>`
       : `<div class="alert ok">핵심 입력 항목이 모두 채워졌습니다.</div>`;
@@ -486,6 +502,7 @@
   function renderReport() {
     $$("#audTabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.aud === AUD)));
     $("#reportOut").innerHTML = md(reportText());
+    $("#reportCover").innerHTML = `<span class="eyebrow">VIETNAM MARKET ENTRY</span><h2>${esc(DIAG.context.company)}</h2><p>베트남 진출 전략 · ${AUD === "external" ? "고객사 검토용" : "내부 검토용"}</p><div><span>작성일 ${new Date().toLocaleDateString("sv-SE")}</span><span>작성: 강동조</span><span>판단 기준 ${esc(KB.entity_types.last_reviewed)}</span></div><small>초기 진단 초안 · 원문 출처 및 전문가 검토 필요</small>`;
     const c = DIAG.context, body = `회사명: ${c.company}\n업종: ${c.sector}\n제품: ${c.products}\n진출 목적: ${c.objective}\n진단 추천안: ${DIAG.recommendation.primary.name}\n\n상담 희망 내용:\n`;
     $("#mailCta").href = "mailto:djkang1004@gmail.com?subject=" + encodeURIComponent(`[베트남 진출 상담] ${c.company}`) + "&body=" + encodeURIComponent(body);
   }
@@ -504,16 +521,16 @@
     DIAG = VNEngine.diagnose(KB, raw);
     MERGED = Object.keys(collectResponses()).length ? VNEngine.merge(DIAG, collectResponses()) : null;
     unlock(); renderDiag(); renderPrompts(); renderReport();
-    if (MERGED) renderMerge();
+    if (MERGED) renderMerge(); else $("#mergeOut").innerHTML = "";
     if (scroll) $("#s2").scrollIntoView({ behavior: "smooth" });
   }
 
   // ------------------------------------------------ 이벤트
-  $("#intake").addEventListener("submit", (e) => { e.preventDefault(); run(true); });
-  $("#intake").addEventListener("input", () => save({ form: readForm() }));
-  $("#addProduct").onclick = () => $("#products").appendChild(productRow());
-  $("#resetBtn").onclick = () => { writeForm({}); try { localStorage.removeItem(STORE); } catch (e) {} };
-  $$("[data-sample]").forEach((b) => (b.onclick = () => { writeForm(SAMPLES[b.dataset.sample]); run(true); }));
+  $("#intake").addEventListener("submit", (e) => { e.preventDefault(); if (validateIntake()) run(true); });
+  $("#intake").addEventListener("input", () => { save({ form: readForm() }); invalidateResults(); });
+  $("#addProduct").onclick = () => { $("#products").appendChild(productRow()); invalidateResults(); };
+  $("#resetBtn").onclick = () => { writeForm({}); invalidateResults(); showStep(0); $("#saveNote").textContent = "입력과 진단 결과를 초기화했습니다."; try { localStorage.removeItem(STORE); } catch (e) {} };
+  $$("[data-sample]").forEach((b) => (b.onclick = () => { writeForm(SAMPLES[b.dataset.sample]); clearResponses(); showStep(0); run(true); }));
   $("#copyPrompt").onclick = async () => {
     try { await navigator.clipboard.writeText($("#promptBox").textContent); $("#copyNote").textContent = "복사했습니다."; }
     catch (e) { const r = document.createRange(); r.selectNodeContents($("#promptBox")); getSelection().removeAllRanges(); getSelection().addRange(r); $("#copyNote").textContent = "선택했습니다. Ctrl+C로 복사하세요."; }
@@ -525,14 +542,60 @@
   $("#dlReport").onclick = () => download(`${fileSafe(DIAG.context.company)}_베트남진출보고서_${AUD === "external" ? "제출본" : "내부검토본"}.md`, reportText());
   $("#printReport").onclick = () => window.print();
 
+  // ------------------------------------------------ 단계별 입력 · 예시 보고서
+  const fields = Array.from($("#intake").children).filter(el => el.tagName === "FIELDSET");
+  const plans = fields[3].querySelector(".grid");
+  const operations = document.createElement("fieldset");
+  operations.innerHTML = '<legend>운영 계획</legend><div class="grid"></div>';
+  const operationsGrid = operations.querySelector(".grid");
+  Array.from(plans.children).slice(8).forEach(el => operationsGrid.appendChild(el));
+  fields[3].after(operations);
+  const groups = [[fields[0],fields[1],fields[2]], [fields[3]], [operations,fields[4],fields[5]]];
+  let currentStep = 0;
+  const stepNames = ["기업 개요", "진출 목표", "운영·규제"];
+  function showStep(n, focus = false) {
+    currentStep = n;
+    groups.forEach((group,i) => group.forEach(el => el.hidden = i !== n));
+    $$("[data-step]").forEach((b,i) => { if(i === n) b.setAttribute("aria-current","step"); else b.removeAttribute("aria-current"); });
+    $("#previousStep").hidden = n === 0; $("#nextStep").hidden = n === 2; $("#submitDiagnosis").hidden = n !== 2;
+    $("#intakeProgress").value = n+1; $("#stepStatus").textContent = `${n+1} / 3 · ${stepNames[n]}`;
+    $("#formError").hidden = true;
+    if(focus) { const first = groups[n][0].querySelector("input,select,textarea"); if(first) first.focus(); }
+  }
+  function validateIntake(step = null) {
+    const checks = [[0,$("#f_name"),"회사명을 입력해 주세요."],[0,$("#f_industry"),"업종을 입력해 주세요."],[0,$("#products [data-p=name]"),"주력 제품·서비스를 하나 이상 입력해 주세요."],[1,$("#f_obj"),"진출 목적을 입력해 주세요."],[1,$("#f_cust"),"목표 고객을 입력해 주세요."]];
+    const missing = checks.find(([s,el]) => (step === null || step === s) && (el.dataset.p ? !$$("#products [data-p=name]").some(x=>x.value.trim()) : !el.value.trim()));
+    if(missing) { showStep(missing[0]); $("#formError").textContent = missing[2]; $("#formError").hidden = false; missing[1].focus(); return false; }
+    for (const [s,group] of groups.entries()) for(const fieldset of group) for(const el of $$("input[type=number]",fieldset)) if((step === null || step === s) && !el.checkValidity()) { showStep(s); el.reportValidity(); return false; }
+    return true;
+  }
+  function clearResponses() { $$("#respList textarea").forEach(el=>el.value=""); MERGED=null; $("#mergeOut").innerHTML=""; }
+  function invalidateResults() {
+    if(!DIAG) return;
+    DIAG=null; MERGED=null; clearResponses();
+    ["#s2","#s3","#s4","#s5"].forEach(s=>{ $(s).classList.add("locked"); $(s).inert=true; });
+    $("#diagOut").innerHTML='<p class="note">입력 내용이 변경되었습니다. 진단을 다시 실행해 주세요.</p>';
+    ["#reportOut","#reportCover","#promptTabs","#promptBox"].forEach(s=>$(s).textContent="");
+    $("#mailCta").href="mailto:djkang1004@gmail.com?subject="+encodeURIComponent("[베트남 진출 상담]");
+  }
+  $("#nextStep").onclick=()=>{ if(validateIntake(currentStep)) showStep(currentStep+1,true); };
+  $("#previousStep").onclick=()=>showStep(currentStep-1,true);
+  $$("[data-step]").forEach(b=>b.onclick=()=>{ const n=Number(b.dataset.step); if(n<=currentStep || validateIntake(currentStep)) showStep(n,true); });
+  $("#sampleReportBtn").onclick=()=>{ if(!KB) return; const sample=VNEngine.diagnose(KB,SAMPLES.cosmetics); $("#sampleReportOut").innerHTML=md(VNEngine.report(KB,sample,null,{audience:"external",author:"강동조 · 가상 기업 예시"})); $("#sampleDialog").showModal(); };
+  $("#closeSample").onclick=()=>$("#sampleDialog").close();
+  $("#sampleReportBtn").disabled=true;
+  $$("[data-sample]").forEach(b=>b.disabled=true);
+  $("#nextStep").disabled=true;
+  showStep(0); ["#s2","#s3","#s4","#s5"].forEach(s=>$(s).inert=true);
+
   // ------------------------------------------------ 시작
   ["ChatGPT", "Gemini"].forEach((n) => $("#respList").appendChild(respBlock({ llm: n })));
   fetch("kb.json").then((r) => r.json()).then((kb) => {
-    KB = kb;
+    KB = kb; $("#sampleReportBtn").disabled=false; $("#nextStep").disabled=false; $$("[data-sample]").forEach(b=>b.disabled=false);
     $("#kbDate").textContent = kb.entity_types.last_reviewed;
     const saved = load();
     writeForm(saved && saved.form);
-  }).catch(() => { $("#diagOut").innerHTML = '<div class="alert">판단 기준 데이터(kb.json)를 불러오지 못했습니다. 웹 서버에서 열어 주세요.</div>'; });
+  }).catch(() => { $("#formError").hidden=false; $("#formError").textContent="판단 기준 데이터를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요."; $("#diagOut").innerHTML = '<div class="alert">판단 기준 데이터를 불러오지 못했습니다. 페이지를 새로고침해 주세요. 문제가 계속되면 이메일로 문의해 주세요.</div>'; });
 })();
 </script>
 </body>
