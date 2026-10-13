@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>베트남 진출 진단 | 강동조</title>
-<meta name="description" content="회사 정보만 입력하면 베트남 시장조사·마케팅·수출입·법인 설립 진단과 실행계획을 생성합니다. 입력 정보는 브라우저 밖으로 전송되지 않습니다.">
+<title>Mekong Kang Advisory | 베트남 진출 진단</title>
+<meta name="description" content="Mekong Kang Advisory와 강동조가 제공하는 베트남 진출 진단 도구. 시장조사·마케팅·수출입·법인 설립 실행계획을 브라우저 안에서 생성합니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f7f3; --paper: #ffffff; --ink: #1b1b2f; --soft: #6b7280; --line: #e5e7eb;
-    --accent: #d2e823; --accent-deep: #b8cc1f; --accent-tint: #f4f9d8;
-    --ok: #22c55e; --warn: #f59e0b; --bad: #ef4444;
-    --dark: #1b1b2f; --dark2: #262640; --dark3: #2f2f4a;
+    --bg: #f6f1ea; --paper: #ffffff; --ink: #101a2f; --soft: #697184; --line: #e6dfd5;
+    --accent: #d4461a; --accent-deep: #ad3515; --accent-tint: #fff1ea;
+    --ok: #22c55e; --warn: #d97706; --bad: #dc2626;
+    --dark: #0f1e3a; --dark2: #172846; --dark3: #253858;
     --radius: 12px;
   }
   * { box-sizing: border-box; }
@@ -171,12 +171,72 @@
     body { background: #fff; }
     section.card { border: 0; padding: 0; box-shadow: none; }
   }
+
+
+  /* ===== Mekong Kang Advisory final hybrid override ===== */
+  body { background: linear-gradient(180deg, #f6f1ea 0%, #fbfaf7 52%, #f6f1ea 100%); }
+  header.top { background: rgba(15,30,58,.96); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+  .brand { align-items: center; gap: 12px; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 50%; display:inline-flex; align-items:center; justify-content:center; background: var(--accent); color: #fff; font-size: 18px; flex: 0 0 34px; box-shadow: 0 0 0 6px rgba(212,70,26,.12); }
+  .brand-text { display:flex; flex-direction:column; gap:1px; }
+  .brand-text b { font-family: "Noto Sans KR", sans-serif; font-size: 16px; letter-spacing: .01em; color:#fff; line-height:1.1; }
+  .brand-text span { font-size: 10px; letter-spacing: .16em; color: rgba(255,255,255,.52); text-transform: uppercase; margin:0; }
+  nav.steps a.cta-nav { background: var(--accent); color:#fff; box-shadow: 0 8px 20px rgba(212,70,26,.22); }
+  nav.steps a.cta-nav:hover { background: var(--accent-deep); }
+
+  .hero-wrap { position: relative; overflow:hidden; background:
+    radial-gradient(circle at 86% 18%, rgba(212,70,26,.26) 0 12%, transparent 28%),
+    radial-gradient(circle at 10% 78%, rgba(255,255,255,.08) 0 14%, transparent 34%),
+    linear-gradient(135deg, #0f1e3a 0%, #132642 46%, #071021 100%); }
+  .hero-wrap::before { content:""; position:absolute; inset:0; opacity:.18; background-image:url("data:image/svg+xml,%3Csvg width='1400' height='620' viewBox='0 0 1400 620' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-80 380 C180 240 300 500 520 340 S920 170 1110 300 1300 430 1490 240' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M-60 430 C210 290 350 550 590 390 S920 230 1160 360 1330 470 1490 300' fill='none' stroke='%23d4461a' stroke-width='3'/%3E%3Cpath d='M-100 310 C150 180 310 390 520 280 S860 90 1120 240 1310 310 1500 150' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E"); background-size: cover; background-position:center; }
+  .hero-wrap::after { content:""; position:absolute; right:-90px; top:90px; width:260px; height:260px; border-radius:50%; background:var(--accent); opacity:.12; filter: blur(.5px); }
+  .hero { position:relative; z-index:1; max-width:none; display:grid; grid-template-columns: minmax(0,1.08fr) 390px; gap:54px; align-items:center; padding:84px 0 76px; text-align:left; }
+  .hero h1 { font-size: clamp(38px, 5.4vw, 62px); line-height:1.08; letter-spacing:-.035em; margin-bottom:22px; }
+  .hero h1 .hl { color:#fff; font-style:normal; }
+  .hero h1 .river { color:var(--accent); font-style:italic; }
+  .hero p { max-width:680px; color: rgba(255,255,255,.68); font-size:17px; }
+  .trust-bar { color: rgba(255,255,255,.62); letter-spacing:.1em; }
+  .trust-bar .stars, .trust-bar .brand-dot { color: var(--accent); }
+  .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:30px; }
+  .hero .btn-hero { background:var(--accent); color:#fff; border-radius:999px; box-shadow: 0 16px 38px rgba(212,70,26,.25); }
+  .hero .btn-hero:hover { background:var(--accent-deep); }
+  .btn-secondary-hero { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:999px; color:rgba(255,255,255,.84); text-decoration:none; border:1px solid rgba(255,255,255,.2); font-weight:700; font-size:14px; }
+  .btn-secondary-hero:hover { background:rgba(255,255,255,.07); color:#fff; }
+  .chips { margin-top:26px; }
+  .chip { border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.055); color:rgba(255,255,255,.62); }
+  .mekong-card { position:relative; background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:24px; padding:28px; color:#fff; box-shadow: 0 30px 80px rgba(0,0,0,.24); backdrop-filter: blur(10px); overflow:hidden; }
+  .mekong-card::before { content:""; position:absolute; inset:auto -70px -90px auto; width:220px; height:220px; border-radius:50%; background:var(--accent); opacity:.18; }
+  .mekong-mark { width:64px; height:64px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; color:#fff; font-size:34px; margin-bottom:28px; box-shadow:0 0 0 12px rgba(212,70,26,.13); }
+  .mekong-card h3 { font-family:"Noto Sans KR", sans-serif; font-size:28px; line-height:1.18; margin:0 0 8px; letter-spacing:-.02em; }
+  .mekong-card .sub { color:rgba(255,255,255,.6); font-size:13px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:26px; }
+  .river-line { height:74px; margin:10px 0 24px; }
+  .river-line svg { width:100%; height:100%; overflow:visible; }
+  .proof-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; border-top:1px solid rgba(255,255,255,.13); padding-top:20px; }
+  .proof-grid b { display:block; font-size:20px; color:#fff; }
+  .proof-grid span { color:rgba(255,255,255,.55); font-size:11px; line-height:1.35; }
+  .content-area { padding-top:44px; }
+  section.card { border:1px solid rgba(15,30,58,.06); box-shadow: 0 10px 34px rgba(15,30,58,.07); }
+  .sec-head .num { background:var(--dark); color:#fff; border-radius:999px; }
+  .btn { background:var(--accent); color:#fff; box-shadow: 0 8px 20px rgba(212,70,26,.13); }
+  .btn:hover { background:var(--accent-deep); }
+  .btn.ghost { color:var(--dark); box-shadow:none; }
+  .btn.ghost:hover { border-color:var(--accent); background:var(--accent-tint); }
+  .tabs button[aria-selected=true], .md th { background: var(--dark); border-color: var(--dark3); }
+  pre.prompt { background:#09152a; }
+  .cta { background: radial-gradient(circle at 86% 0%, rgba(212,70,26,.30), transparent 30%), linear-gradient(135deg, #0f1e3a, #071021); }
+  .cta::before { background: transparent; border:1px solid rgba(255,255,255,.12); opacity:1; }
+  .cta .eyebrow2 { color:var(--accent); }
+  .cta .btn { background:var(--accent); color:#fff; }
+  footer { color:#7a8396; }
+  @media (max-width: 900px) { .hero { grid-template-columns:1fr; gap:28px; padding:56px 0 54px; } .mekong-card { max-width:520px; } }
+  @media (max-width: 760px) { .brand-text span { display:none; } .hero h1 { font-size:34px; } .proof-grid { grid-template-columns:1fr; } }
+
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../"><span class="star">✳</span><b>강동조</b><span>Vietnam Entry Advisory</span></a>
+    <a class="brand" href="../"><span class="brand-mark">✳</span><span class="brand-text"><b>Mekong Kang Advisory</b><span>강동조 · Vietnam Entry Consulting</span></span></a>
     <nav class="steps" aria-label="단계">
       <a href="#s1">정보 입력</a><a href="#s2">진단</a><a href="#s3">프롬프트</a><a href="#s4">교차검증</a><a href="#s5">보고서</a><a class="cta-nav" href="#cta-section">상담 신청 ↗</a>
     </nav>
@@ -186,15 +246,37 @@
 <div class="hero-wrap">
 <div class="wrap">
   <div class="hero">
-    <div class="trust-bar"><span class="stars">★★★★★</span> FDI 컨설팅 실무 기반 진단 엔진</div>
-    <h1>전략적 사고.<br><span class="hl">확장 가능한 결과.</span></h1>
-    <p>회사 정보만 입력하면 베트남 진출 진단부터 실행계획까지. 시장조사 · 마케팅 조사 · 수출입 · 법인/지사/사무소 설립을 현지 FDI 컨설팅 실무 기준으로 진단합니다.</p>
-    <a class="btn-hero" href="#s1">무료 진단 시작 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></a>
-    <div class="chips">
-      <span class="chip">입력 정보는 서버로 전송되지 않음 (브라우저 내 처리)</span>
-      <span class="chip">확인된 사실 / 추정 / 미확인 구분</span>
-      <span class="chip">여러 AI 답변 교차검증</span>
+    <div class="hero-copy">
+      <div class="trust-bar"><span class="brand-dot">✳</span> Mekong Kang Advisory · 강동조 Vietnam Entry Desk</div>
+      <h1><span class="river">Mekong</span>의 흐름을 읽고,<br><span class="hl">베트남 진출을 계획에서 실행으로.</span></h1>
+      <p>메콩강의 흐름처럼 시장·규제·파트너 네트워크를 읽고, 강동조의 제조·물류·SCM 현장 경험과 Mekong Kang Advisory의 실행력을 결합해 진출 전략을 한 번에 진단합니다.</p>
+      <div class="hero-actions">
+        <a class="btn-hero" href="#s1">무료 진단 시작 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></a>
+        <a class="btn-secondary-hero" href="#cta-section">상담 연결 ↗</a>
+      </div>
+      <div class="chips">
+        <span class="chip">브라우저 내 처리 · 서버 전송 없음</span>
+        <span class="chip">사실 / 추정 / 미확인 구분</span>
+        <span class="chip">여러 AI 답변 교차검증</span>
+      </div>
     </div>
+    <aside class="mekong-card" aria-label="Mekong Kang Advisory 소개">
+      <div class="mekong-mark">✳</div>
+      <h3>Mekong Kang<br>Advisory</h3>
+      <div class="sub">강동조 · Vietnam Market Entry</div>
+      <div class="river-line" aria-hidden="true">
+        <svg viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-10 55 C45 20 91 75 145 43 C202 10 233 24 330 46" stroke="rgba(255,255,255,.38)" stroke-width="2"/>
+          <path d="M-12 68 C54 31 98 90 158 55 C216 22 250 38 334 61" stroke="#D4461A" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="240" cy="39" r="5" fill="#D4461A"/>
+        </svg>
+      </div>
+      <div class="proof-grid">
+        <div><b>28yr</b><span>제조·물류 SCM 현장 경험</span></div>
+        <div><b>VN</b><span>베트남 현지 실행 중심</span></div>
+        <div><b>AI</b><span>진단·조사·보고 자동화</span></div>
+      </div>
+    </aside>
   </div>
 </div>
 </div>
@@ -315,18 +397,18 @@
   </section>
 
   <div class="cta" id="cta-section">
-    <div class="eyebrow2">CONSULTING</div>
-    <h2>진단 결과를 실행으로 옮기려면</h2>
-    <p>현지 실사, 파트너 발굴, 인허가 대행, 고객사 제출용 보고서·발표자료 작성까지 직접 지원합니다.</p>
+    <div class="eyebrow2">MEKONG KANG ADVISORY</div>
+    <h2>진단에서 끝내지 않고, 현장 실행까지</h2>
+    <p>강동조가 직접 베트남 현지 실사, 파트너 발굴, 인허가 대행, 고객사 제출용 보고서·발표자료 작성까지 연결합니다.</p>
     <div class="bar" style="justify-content:center">
-      <a class="btn" id="mailCta" href="mailto:djkang1004@gmail.com?subject=%5B%EB%B2%A0%ED%8A%B8%EB%82%A8%20%EC%A7%84%EC%B6%9C%20%EC%83%81%EB%8B%B4%5D">무료 상담 예약 ↗</a>
+      <a class="btn" id="mailCta" href="mailto:djkang1004@gmail.com?subject=%5B%EB%B2%A0%ED%8A%B8%EB%82%A8%20%EC%A7%84%EC%B6%9C%20%EC%83%81%EB%8B%B4%5D">Mekong Kang 상담 신청 ↗</a>
       <a class="btn ghost" href="../">강동조 이력·포트폴리오 보기</a>
     </div>
   </div>
 </main>
 <footer>
   본 도구의 결과는 공개 법령·실무 경험에 기반한 참고용 초안이며 법률·세무 자문이 아닙니다. 법령 기준일: <span id="kbDate"></span><br>
-  © 강동조 · djkang1004@gmail.com
+  © Mekong Kang Advisory · 강동조 · djkang1004@gmail.com
 </footer>
 
 <script src="engine.js"></script>
