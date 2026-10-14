@@ -674,7 +674,22 @@
   }
   const fileSafe = (s) => (s || "client").replace(/[^\w가-힣-]+/g, "_");
 
-  function run(scroll) {
+  async function ensureKB() {
+    if (KB) return true;
+    try {
+      const r = await fetch("kb.json?ts=" + Date.now());
+      KB = await r.json();
+      const kbEl = $("#kbDate");
+      if (kbEl && KB.entity_types) kbEl.textContent = KB.entity_types.last_reviewed || "";
+      return true;
+    } catch (e) {
+      $("#diagOut").innerHTML = '<div class="alert">판단 기준 데이터(kb.json)를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div>';
+      return false;
+    }
+  }
+
+  async function run(scroll) {
+    if (!(await ensureKB())) return;
     const raw = readForm();
     save({ form: raw });
     DIAG = VNEngine.diagnose(KB, raw);
@@ -714,15 +729,11 @@
   });
 
   ["ChatGPT", "Gemini"].forEach((n) => $("#respList").appendChild(respBlock({ llm: n })));
-  fetch("kb.json").then((r) => r.json()).then((kb) => {
-    KB = kb;
-    $("#kbDate").textContent = kb.entity_types.last_reviewed;
-    const saved = load();
-    writeForm(saved && saved.form);
-  }).catch(() => { $("#diagOut").innerHTML = '<div class="alert">판단 기준 데이터(kb.json)를 불러오지 못했습니다. 웹 서버에서 열어 주세요.</div>'; });
+  ensureKB().then(() => { const saved = load(); writeForm(saved && saved.form); });
 })();
 </script>
 </body>
 </html>
+
 
 
