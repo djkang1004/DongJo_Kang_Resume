@@ -658,7 +658,7 @@
 
   function reportText() { return VNEngine.report(KB, DIAG, MERGED, { audience: AUD, author: "강동조 · 베트남 진출 컨설팅" }); }
   function renderReport() {
-  $("#audTabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.aud === AUD)));
+  $$("#audTabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.aud === AUD)));
   const c = DIAG.context;
   const teaser = `# ${c.company} 베트남 진출 무료 맛보기 요약\n\n추천 진출형태: **${DIAG.recommendation.primary.name}**\n\n판별 업종: **${c.sector}**\n\n무료 버전에서는 요약만 공개됩니다. 상세 보고서에는 시장·마케팅 조사 과제, 규제·통관 체크리스트, 진출형태 비교 전체, 실행 로드맵이 포함됩니다.`;
   $("#reportOut").innerHTML = md(teaser) + paidCtaHtml("보고서 전문은 상세 진단 결제 후 제공됩니다.");
@@ -696,7 +696,7 @@
   $("#dlPrompts").onclick = () => download(`${fileSafe(DIAG.context.company)}_조사프롬프트.md`, DIAG.modules.map((m) => VNEngine.modulePrompt(m, DIAG)).join("\n\n---\n\n"));
   $("#addResp").onclick = () => $("#respList").appendChild(respBlock());
   $("#runMerge").onclick = () => { MERGED = VNEngine.merge(DIAG, collectResponses()); renderMerge(); renderReport(); };
-  $$("#audTabs button").forEach((b) => (b.onclick = () => { AUD = b.dataset.aud; renderReport(); }));
+  $$$("#audTabs button").forEach((b) => (b.onclick = () => { AUD = b.dataset.aud; renderReport(); }));
   $("#dlReport").onclick = () => { location.hash = "#paid-diagnosis"; alert("보고서 전문 다운로드는 상세 진단 결제 후 제공됩니다."); };
   $("#printReport").onclick = () => { location.hash = "#paid-diagnosis"; alert("PDF 저장은 상세 진단 결제 후 제공됩니다."); };
 
@@ -724,4 +724,5 @@
 </script>
 </body>
 </html>
+
 
